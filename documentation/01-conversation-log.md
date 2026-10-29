@@ -193,6 +193,10 @@ Design choices made at this step are in `06-decisions.md`.
 
 ---
 
+**Later turns of this session** (new and finished apps, Ollama, the roster, the agent, the rename) are in `11-steering-log.md`, with my messages verbatim and what I had to correct.
+
+---
+
 ## Shape of the collaboration (quick read)
 
 | Who | Contributed |

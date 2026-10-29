@@ -74,3 +74,5 @@ Written after running the demo script against `llama3.2` (3B, CPU only) through 
 - Teaching: it extracted all five people correctly, including Priya's working hours in Eastern. It gave Brad priority "low" (fixed in code: never-reschedule implies high).
 
 What is still unverified: other models, the Claude API provider (never run), and anything on a GPU. Timings in the demo script are from one machine.
+
+See also `11-steering-log.md` (the full account of where I steered and where Claude was wrong) and `12-prompt-iterations.md` (prompt text before and after, with the real outputs that broke them).
