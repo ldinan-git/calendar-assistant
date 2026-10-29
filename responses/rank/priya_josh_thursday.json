@@ -1,0 +1,25 @@
+{
+  "options": [
+    {
+      "slot": { "day": 3, "start": 960 },
+      "headline": "Thursday 4pm, end of day",
+      "reasoning": "Priya and Josh are both free, and you have two hours since Design sync. Nothing after it, so it can't run into another meeting.",
+      "invite_message": "Hi both, could we get 30 minutes Thursday at 4pm?",
+      "bump_message": ""
+    },
+    {
+      "slot": { "day": 3, "start": 690 },
+      "headline": "Thursday 11:30, after your focus block",
+      "reasoning": "Free for everyone, with 30 minutes after your proposal block and an hour before Design sync. Keeps the afternoon quieter.",
+      "invite_message": "Hi both, how about Thursday at 11:30 for 30 minutes?",
+      "bump_message": ""
+    },
+    {
+      "slot": { "day": 3, "start": 720 },
+      "headline": "Thursday noon, over lunch",
+      "reasoning": "Also works for all three, but eats into lunch and leaves only 30 minutes before Design sync.",
+      "invite_message": "Hi both, could we do Thursday at noon for 30 minutes?",
+      "bump_message": ""
+    }
+  ]
+}

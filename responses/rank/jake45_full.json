@@ -1,0 +1,25 @@
+{
+  "options": [
+    {
+      "slot": { "day": 0, "start": 720 },
+      "headline": "Monday noon, clear on both sides",
+      "reasoning": "Jake is a partner, so I'm giving him a clean slot. You're free for 90 minutes before it and 75 after, and it's past your 10am cutoff.",
+      "invite_message": "Hi Jake, do you have 45 minutes Monday at noon? I'd like to walk through where things stand.",
+      "bump_message": ""
+    },
+    {
+      "slot": { "day": 1, "start": 690 },
+      "headline": "Tuesday late morning, room to breathe",
+      "reasoning": "Two free hours before and almost two after, and nothing back-to-back. Good backup if Monday doesn't work for Jake.",
+      "invite_message": "Hi Jake, would Tuesday at 11:30 work for 45 minutes?",
+      "bump_message": ""
+    },
+    {
+      "slot": { "day": 0, "start": 840 },
+      "headline": "Monday 2pm, by moving Josh",
+      "reasoning": "Only works by moving your 1:1 with Josh. You said Josh's meetings can be rescheduled and Jake is a partner, so it's a cheap move. Josh's 1:1 slides to Monday 10:30.",
+      "invite_message": "Hi Jake, can we do 45 minutes Monday at 2pm?",
+      "bump_message": "Hi Josh, something came up with Jake. Can we move our 1:1 to Monday at 10:30 AM instead?"
+    }
+  ]
+}

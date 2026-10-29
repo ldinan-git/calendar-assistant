@@ -1,0 +1,11 @@
+{
+  "facts": [
+    {
+      "type": "other",
+      "summary": "Unrecognized note, saved as written",
+      "source_text": "(mock mode: no fixture matched this message)"
+    }
+  ],
+  "replace_ids": [],
+  "confirmation": "Mock mode has no canned response for that message, so I saved it as a plain note. Add a fixture in responses/ to handle it."
+}

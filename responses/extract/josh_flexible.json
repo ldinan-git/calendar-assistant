@@ -1,0 +1,15 @@
+{
+  "facts": [
+    {
+      "type": "person",
+      "summary": "Josh is a flexible friend and team member, meetings can move",
+      "name": "Josh",
+      "attributes": { "role": "team member", "relationship": "friend" },
+      "priority": "low",
+      "flexibility": "high",
+      "source_text": "Josh is a team member who is my friend, anything with him can be rescheduled"
+    }
+  ],
+  "replace_ids": [],
+  "confirmation": "Got it: Josh is a friend and teammate, and his meetings are fine to reschedule."
+}

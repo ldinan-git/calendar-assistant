@@ -1,0 +1,13 @@
+{
+  "facts": [
+    {
+      "type": "preference",
+      "summary": "Avoid meetings before 10am",
+      "rule": "avoid meetings before 10:00",
+      "strength": "soft",
+      "source_text": "I try to avoid meetings before 10am"
+    }
+  ],
+  "replace_ids": [],
+  "confirmation": "Got it: I'll steer away from meetings before 10am when I can."
+}

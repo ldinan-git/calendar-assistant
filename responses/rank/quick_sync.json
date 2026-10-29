@@ -1,0 +1,25 @@
+{
+  "options": [
+    {
+      "slot": { "day": 1, "start": 720 },
+      "headline": "Tuesday noon, buffers on both sides",
+      "reasoning": "Free for you and Jake, with 2.5 hours before and 90 minutes after. Replaces the Thursday slot that ran back-to-back with your focus block.",
+      "invite_message": "Hi Jake, could we do the quick sync on terms Tuesday at noon instead of Thursday?",
+      "bump_message": ""
+    },
+    {
+      "slot": { "day": 0, "start": 720 },
+      "headline": "Monday noon",
+      "reasoning": "An hour and a half free on each side.",
+      "invite_message": "Hi Jake, would Monday at noon work for the quick sync?",
+      "bump_message": ""
+    },
+    {
+      "slot": { "day": 4, "start": 750 },
+      "headline": "Friday 12:30",
+      "reasoning": "Works for both of you. Only an hour since your check-in with Jake, so it comes after the others.",
+      "invite_message": "Hi Jake, how about Friday at 12:30 for the quick sync?",
+      "bump_message": ""
+    }
+  ]
+}

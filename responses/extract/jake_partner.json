@@ -1,0 +1,15 @@
+{
+  "facts": [
+    {
+      "type": "person",
+      "summary": "Jake is a partner, his meetings are high priority",
+      "name": "Jake",
+      "attributes": { "role": "partner" },
+      "priority": "high",
+      "flexibility": "low",
+      "source_text": "Jake is a partner, anything with him is high priority"
+    }
+  ],
+  "replace_ids": [],
+  "confirmation": "Got it: Jake is a partner, so anything with him is high priority."
+}

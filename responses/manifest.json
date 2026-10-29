@@ -1,0 +1,128 @@
+{
+  "_readme": "Mock-mode routing. For each LLM task, the first rule whose `match` regex hits the input (and whose `requireTags` are all present in the taught facts) decides which fixture file answers. See documentation/04-mock-layer.md.",
+  "tags": {
+    "jake": "jake.*partner|partner.*jake",
+    "josh": "josh.*(friend|reschedul|flexib)",
+    "flight": "flight",
+    "early": "before 10"
+  },
+  "extract": {
+    "rules": [
+      {
+        "match": "jake.*partner",
+        "file": "extract/jake_partner.json"
+      },
+      {
+        "match": "josh.*(friend|reschedul)",
+        "file": "extract/josh_flexible.json"
+      },
+      {
+        "match": "flight",
+        "file": "extract/flight_buffer.json"
+      },
+      {
+        "match": "before 10",
+        "file": "extract/no_early_meetings.json"
+      }
+    ],
+    "fallback": "extract/_fallback.json"
+  },
+  "parse": {
+    "rules": [
+      {
+        "match": "45 minutes with jake",
+        "file": "parse/jake_45.json"
+      },
+      {
+        "match": "priya and josh.*thursday",
+        "file": "parse/priya_josh_thursday_30.json"
+      },
+      {
+        "match": "60 minutes with priya.*roadmap",
+        "file": "parse/roadmap_sync_60.json"
+      },
+      {
+        "match": "30 minutes with jake.*quick sync",
+        "file": "parse/quick_sync_30.json"
+      }
+    ],
+    "fallback": "parse/_fallback.json"
+  },
+  "analyze": {
+    "tagsUsed": [
+      "jake",
+      "josh"
+    ],
+    "files": {
+      "": "analyze/base.json",
+      "jake": "analyze/jake.json",
+      "josh": "analyze/josh.json",
+      "jake+josh": "analyze/jake_josh.json"
+    }
+  },
+  "rank": {
+    "rules": [
+      {
+        "match": "45 minutes with jake",
+        "requireTags": [
+          "jake",
+          "josh",
+          "early"
+        ],
+        "file": "rank/jake45_full.json"
+      },
+      {
+        "match": "45 minutes with jake",
+        "requireTags": [
+          "jake",
+          "josh"
+        ],
+        "file": "rank/jake45_partner_flexible.json"
+      },
+      {
+        "match": "45 minutes with jake",
+        "file": "rank/jake45_generic.json"
+      },
+      {
+        "match": "priya and josh.*thursday",
+        "file": "rank/priya_josh_thursday.json"
+      },
+      {
+        "match": "60 minutes with priya.*roadmap",
+        "file": "rank/roadmap_sync.json"
+      },
+      {
+        "match": "30 minutes with jake.*quick sync",
+        "file": "rank/quick_sync.json"
+      }
+    ],
+    "fallback": null
+  },
+  "advice": {
+    "rules": [
+      {
+        "match": "roadmap sync",
+        "requireTags": [
+          "flight"
+        ],
+        "file": "advice/roadmap_sync_flight.json"
+      },
+      {
+        "match": "roadmap sync",
+        "file": "advice/roadmap_sync_plain.json"
+      },
+      {
+        "match": "quick sync",
+        "requireTags": [
+          "jake"
+        ],
+        "file": "advice/quick_sync_jake.json"
+      },
+      {
+        "match": "quick sync",
+        "file": "advice/quick_sync_plain.json"
+      }
+    ],
+    "fallback": "advice/_fallback.json"
+  }
+}
