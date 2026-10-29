@@ -1,6 +1,6 @@
 # What is going on in this app
 
-**Pascal** is a calendar agent you *set up* and then *talk to*. You connect calendars, add teammates, and tell it things in plain English ("Jake is a partner"). It keeps what you said in one knowledge base, with a structured form that code can use, and every time it suggests a meeting time it reads all of it. Code handles the time math, time zones and every number. A language model handles judgment and language.
+**Tessera** is a calendar agent you *set up* and then *talk to*. You connect calendars, add teammates, and tell it things in plain English ("Jake is a partner"). It keeps what you said in one knowledge base, with a structured form that code can use, and every time it suggests a meeting time it reads all of it. Code handles the time math, time zones and every number. A language model handles judgment and language.
 
 There are two copies of the app, with the same code and different starting states:
 

@@ -139,7 +139,7 @@ export const DEMO = [
   {
     id: "schedule",
     title: "Part 5. Let it work for you",
-    pitch: "Everything above is what lets Pascal act for you: brief you, clean up your calendar, and schedule a meeting from one sentence.",
+    pitch: "Everything above is what lets Tessera act for you: brief you, clean up your calendar, and schedule a meeting from one sentence.",
     steps: [
       {
         title: "Get briefed",

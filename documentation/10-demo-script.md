@@ -168,7 +168,7 @@ Go to **Teammates > Compare**, tick only You, Jake, Alyssa and Priya, and pick W
 
 ## Part 5. Let it work for you
 
-_Everything above is what lets Pascal act for you: brief you, clean up your calendar, and schedule a meeting from one sentence._
+_Everything above is what lets Tessera act for you: brief you, clean up your calendar, and schedule a meeting from one sentence._
 
 ### 1. Get briefed
 

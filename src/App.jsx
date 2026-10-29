@@ -20,7 +20,7 @@ export default function App({ mode }) {
     <div className="mg">
       <header className="mg-top">
         <div className="mg-brand">
-          <h1>Pascal</h1>
+          <h1>Tessera</h1>
           <p>Your calendar agent. Week of Nov 2, times in Central.</p>
         </div>
         {DEV && (

@@ -1,6 +1,6 @@
 # Documentation index
 
-Project: **Pascal** (formerly "margin"), an AI calendar agent you teach in plain English. Class project, built with Claude. Started 2026-10-29.
+Project: **Tessera** (formerly "margin", briefly "Pascal"), an AI calendar agent you teach in plain English. Class project, built with Claude. Started 2026-10-29.
 
 This folder is a working dump, not a polished write-up. The point is to show the process of working with AI: what was asked, what came back, what was kept, what was thrown out, and what is still unverified.
 

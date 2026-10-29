@@ -1,8 +1,6 @@
-# Pascal
+# Tessera
 
 An AI calendar agent you set up in plain English and drive from one chat box. It doesn't just answer: it finds your conflicts, proposes fixes you can apply, briefs your week, and books meetings. Class project, built with Claude.
-
-PASCAL: **P**ersonal **A**gent for **S**cheduling, **C**alendars **A**nd **L**ogistics.
 
 Connect your calendars, add your teammates and their calendars, tell it how each person works ("Brad is a client, never reschedule", "Priya is in Bengaluru and only works 8 AM to 12 PM ET"), then say "schedule a meeting with Jake, Alyssa, and Brad". It checks everyone's calendar and time zone, applies what it knows, flags problems, books the meeting on the right calendar with a video link, and syncs it to all your calendars.
 

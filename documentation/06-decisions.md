@@ -146,7 +146,7 @@ Fourth build: an agent, not just an assistant.
 - **Chose:** the model picker, the LLM trace and the links between pages only show with `?dev=1`. The app probes Ollama quietly and falls back to its built-in rules if nothing is running.
 - **Why:** what someone sees should be the product, not the plumbing. The demo script mentions `?dev=1` where a presenter needs it.
 
-## D29. Pascal finds problems and proposes fixes you can apply
+## D29. Tessera finds problems and proposes fixes you can apply
 - **Chose:** `lib/resolve.js` finds every overlap (often across calendars) and every meeting inside a flight's soft hold, keeps the event with the higher priority and lower flexibility, finds a new time with the same search used for scheduling (everyone's calendars, working hours and holds), drafts the note to anyone affected, and applies it on click. Moves are planned sequentially so two fixes never collide.
 - **Rejected:** letting the model choose what to move; applying fixes silently.
 - **Why:** it's the same split as everywhere else. The model's job was to learn what matters to you (priority, flexibility from what you taught); choosing and placing is arithmetic. Nothing changes without a click.
