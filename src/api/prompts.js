@@ -35,13 +35,15 @@ Use 30 minutes unless a duration is given (45 if three or more attendees). "days
 Example: "Set up an hour with Sarah on Thursday about the Helix deck" -> {"title":"Helix deck","duration_min":60,"attendees":["Sarah"],"days":[3]}`;
 
 export const ROUTE_SYSTEM = `You route one message sent to a calendar assistant chat. Known people: ${TEAM}. Reply with ONLY JSON:
-{"intent":"schedule|teach|recall|book|team|import|sync|chat","names":["known people mentioned"],"calendars":["work","personal","club"],"option":null}
+{"intent":"schedule|teach|recall|book|team|import|sync|resolve|brief|chat","names":["known people mentioned"],"calendars":["work","personal","club"],"option":null}
 - schedule: wants a meeting or call arranged, or asks what times work ("Schedule a meeting with Jake", "I need 30 minutes with Priya")
 - teach: tells you something about a person or a rule ("Brad is a client", "When you see a flight, hold an hour before")
 - recall: asks what you know ("What do you know about Jake?", "Who can I reschedule?")
 - book: picks one of the options just offered ("book option 2", "the first one", "sounds good") and has_options is true. "option" is 1 to 3
 - team: wants people added to the team list ("Add Jake as a teammate", "Add Jake and Sarah to my team"). No calendar is mentioned
 - import: wants calendars imported or connected ("Import my work calendar", "Connect Jake's calendar"). Put the calendars in "calendars" (work, personal, club) and teammates in "names"; "my calendars" means all three; "my team" means all five people
+- resolve: wants conflicts or double-bookings found or fixed ("Fix my conflicts", "Do I have any conflicts?")
+- brief: wants a summary of their week ("Brief me on my week", "How's my week looking?")
 - sync: wants calendars synced so colleagues see them as busy
 - chat: anything else
 "Brad is a client" is teach even though it mentions a person. "names" and "calendars" may be empty lists.`;
@@ -51,6 +53,8 @@ export const RANK_SYSTEM = `You help the user pick a meeting time. You get the r
 "candidate_id" must be copied exactly from the candidates.`;
 
 export const RECALL_SYSTEM = `You answer questions about what the user has taught their calendar assistant. You get the question, the knowledge base (the user's own sentences), and context_notes (the same plus each person's job, office and working-hours overlap). Answer ONLY from those. If something is not there, say you haven't been told. Be brief (under 70 words), plain text, one line per person when several are asked about. Never guess pronouns. Reply with ONLY JSON: {"answer":"..."}`;
+
+export const BRIEF_SYSTEM = `You write a short briefing of the user's week for them, from facts that code has already counted. Use ONLY the facts given. At most 90 words, plain sentences, no lists, no markdown. Lead with what needs their attention (conflicts, meetings inside flight holds), then flights, then the most important meetings, then anything about teammates. Never guess pronouns. Reply with ONLY JSON: {"brief":"..."}`;
 
 export const ADVICE_SYSTEM = `The user received a meeting invite. In at most 45 words say whether to accept, decline, or ask for a new time, and why, using the sender's context, the knowledge base and the listed issues (found by code, trust them). Be direct. Never guess pronouns. Reply with ONLY JSON: {"advice":"..."}`;
 
@@ -62,4 +66,5 @@ export const PROMPTS = {
   rank: RANK_SYSTEM,
   recall: RECALL_SYSTEM,
   advice: ADVICE_SYSTEM,
+  brief: BRIEF_SYSTEM,
 };

@@ -47,7 +47,34 @@ function Booked({ b }) {
   );
 }
 
-function Message({ m, activeOptionsId, onHover, onBook }) {
+function Fixes({ fixes, applied, onApply, busy }) {
+  const open = fixes.filter((f) => f.canApply && !applied.has(f.id));
+  return (
+    <div className="mg-fixes">
+      {fixes.map((f) => {
+        const done = applied.has(f.id);
+        return (
+          <div key={f.id} className={"mg-fix" + (done ? " done" : "")}>
+            <div className="mg-fix-top"><b>{f.keep.title}</b> <span className="mg-small">{f.keep.when}</span></div>
+            <div className="mg-fix-move">
+              {f.canApply ? (
+                <>Move <b>{f.move.title}</b> ({f.move.calendar}) from {f.move.from} to <b>{f.to}</b></>
+              ) : (
+                <>Can't move <b>{f.move.title}</b> automatically</>
+              )}
+            </div>
+            <p className="mg-small">{f.reason}.</p>
+            {f.note && <p className="mg-small mg-note">Note to {f.move.with.join(", ")}: {f.note}</p>}
+            {f.canApply && (done ? <span className="mg-tag ok">Done</span> : <button className="mg-btn small" disabled={busy} onClick={() => onApply([f])}>Apply</button>)}
+          </div>
+        );
+      })}
+      {open.length > 1 && <button className="mg-btn small" disabled={busy} onClick={() => onApply(fixes)}>Apply all {open.length}</button>}
+    </div>
+  );
+}
+
+function Message({ m, activeOptionsId, onHover, onBook, applied, onApplyFixes, onSuggest, busy }) {
   if (m.kind === "user") return <div className="mg-msg-user">{m.text}</div>;
   return (
     <div className="mg-msg-bot">
@@ -59,6 +86,12 @@ function Message({ m, activeOptionsId, onHover, onBook }) {
       )}
       {m.kind === "options" && <Options msg={m} active={m.id === activeOptionsId} onHover={onHover} onBook={onBook} />}
       {m.kind === "booked" && <Booked b={m.booked} />}
+      {m.kind === "fixes" && <Fixes fixes={m.fixes} applied={applied} onApply={onApplyFixes} busy={busy} />}
+      {m.actions && m.actions.length > 0 && (
+        <div className="mg-actions">
+          {m.actions.map((a) => (<button key={a.label} className="mg-btn small ghost" disabled={busy} onClick={() => onSuggest(a.text)}>{a.label}</button>))}
+        </div>
+      )}
     </div>
   );
 }
@@ -103,7 +136,7 @@ function KnowledgeDrawer({ kb, onDelete, onClear }) {
   );
 }
 
-export default function ChatPanel({ messages, busy, input, setInput, onSend, activeOptionsId, onHover, onBook, quick = [], kb = [], onDeleteKb, onClearKb }) {
+export default function ChatPanel({ messages, busy, input, setInput, onSend, activeOptionsId, onHover, onBook, quick = [], kb = [], onDeleteKb, onClearKb, applied = new Set(), onApplyFixes, onSuggest }) {
   const end = useRef(null);
   useEffect(() => {
     end.current && end.current.scrollIntoView({ block: "end" });
@@ -117,7 +150,7 @@ export default function ChatPanel({ messages, busy, input, setInput, onSend, act
       <KnowledgeDrawer kb={kb} onDelete={onDeleteKb} onClear={onClearKb} />
       <div className="mg-chat-log" role="log" aria-live="polite">
         {messages.map((m) => (
-          <Message key={m.id} m={m} activeOptionsId={activeOptionsId} onHover={onHover} onBook={onBook} />
+          <Message key={m.id} m={m} activeOptionsId={activeOptionsId} onHover={onHover} onBook={onBook} applied={applied} onApplyFixes={onApplyFixes} onSuggest={onSuggest} busy={!!busy} />
         ))}
         {busy && <div className="mg-msg-bot mg-typing">{busy}…</div>}
         <div ref={end} />

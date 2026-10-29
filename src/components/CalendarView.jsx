@@ -16,7 +16,7 @@ export default function CalendarView({ events, analysis, flags, zones, overlay, 
       </div>
       <div className="mg-cal-body" style={{ height: (GRID_END - GRID_START) * PPM }}>
         <div className="mg-gutter">
-          {Array.from({ length: 11 }, (_, i) => 8 + i).map((h) => (
+          {Array.from({ length: (GRID_END - GRID_START) / 60 + 1 }, (_, i) => GRID_START / 60 + i).map((h) => (
             <span key={h} style={{ top: (h * 60 - GRID_START) * PPM - 7 }}>{fmt(h * 60).replace(":00", "")}</span>
           ))}
         </div>
@@ -25,7 +25,7 @@ export default function CalendarView({ events, analysis, flags, zones, overlay, 
           const lanes = computeLanes(dayEvents);
           return (
             <div className="mg-day" key={d}>
-              {Array.from({ length: 10 }, (_, i) => (
+              {Array.from({ length: (GRID_END - GRID_START) / 60 }, (_, i) => (
                 <div key={i} className="mg-hline" style={{ top: i * 60 * PPM }} />
               ))}
               {zones.filter((z) => z.day === di && z.end > GRID_START && z.start < GRID_END).map((z, i) => (

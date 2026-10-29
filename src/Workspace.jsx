@@ -15,6 +15,8 @@ import { computeZones, computeFlags, genCandidates, matchRankedOptions, summariz
 import { unsyncedEvents } from "./lib/graph.js";
 import { contextNotes, flightRuleNote, profileLine, kbFacts, factKey, effectiveDirectory, overlapWindow } from "./lib/context.js";
 import { guard, ratingKey } from "./lib/analysis.js";
+import { proposeFixes } from "./lib/resolve.js";
+import { briefFacts } from "./lib/brief.js";
 import { localTimeLabel, tzShort, USER_TZ } from "./lib/tz.js";
 import { pickCalendar, pickProvider, joinLink, PROVIDER_LABEL, calLabel } from "./lib/booking.js";
 import CalendarView from "./components/CalendarView.jsx";
@@ -33,6 +35,11 @@ const GREETING = {
   fresh: "This is a blank slate: no calendars, no teammates, and I don't know anything yet. Set it up from here or from the panels on the left. The demo script has every line to paste.",
   final: "Everything is set up: your three calendars, five teammates and what you've taught me. Ask what I know about anyone, or try \"Schedule a meeting with Jake, Alyssa, and Brad\".",
 };
+
+const AGENT_ACTIONS = [
+  { label: "Brief me on my week", text: "Brief me on my week" },
+  { label: "Fix my conflicts", text: "Fix my conflicts" },
+];
 
 const initialImported = (final) => ({
   cals: Object.fromEntries(CAL_IDS.map((c) => [c, final])),
@@ -75,7 +82,7 @@ export default function Workspace({ mode, quick }) {
   const [analyzing, setAnalyzing] = useState(false);
   const [selected, setSelected] = useState(null);
 
-  const [messages, setMessages] = useState([{ id: "greet", kind: "bot", text: GREETING[mode] }]);
+  const [messages, setMessages] = useState([{ id: "greet", kind: "bot", text: GREETING[mode], actions: FINAL ? AGENT_ACTIONS : undefined }]);
   const [chatInput, setChatInput] = useState("");
   const [busy, setBusy] = useState("");
   const [current, setCurrent] = useState(null); // the options currently on offer
@@ -85,6 +92,7 @@ export default function Workspace({ mode, quick }) {
   const [asking, setAsking] = useState("");
   const [invite, setInvite] = useState(null);
   const [inviteCount, setInviteCount] = useState(0);
+  const [applied, setApplied] = useState(() => new Set());
 
   const runId = useRef(0);
   const rated = useRef(null); // event id -> { key, rating }: only new or changed events go back to the model
@@ -187,7 +195,7 @@ export default function Workspace({ mode, quick }) {
       ...cals.map((c) => `${calLabel(c)} calendar: ${INITIAL_EVENTS.filter((e) => e.calendar === c).length} events`),
       ...names.map((n) => `${n}'s calendar: ${TEAM[n].events.length} events`),
     ];
-    say({ text: `${disconnect ? "Disconnected" : "Connected to Outlook"}:\n${lines.join("\n")}${newPeople.length ? `\n(${list(newPeople)} weren't on your team yet, so I added ${newPeople.length > 1 ? "them" : newPeople[0]}.)` : ""}` });
+    say({ text: `${disconnect ? "Disconnected" : "Connected to Outlook"}:\n${lines.join("\n")}${newPeople.length ? `\n(${list(newPeople)} weren't on your team yet, so I added ${newPeople.length > 1 ? "them" : newPeople[0]}.)` : ""}`, actions: !disconnect && cals.length ? AGENT_ACTIONS : undefined });
     setBusy("");
   }
   const toggleCal = (id) => doImport({ cals: [id], disconnect: !!imported.cals[id] });
@@ -387,6 +395,33 @@ export default function Workspace({ mode, quick }) {
     setHover(null);
   }
 
+  /* ------------------------------ the agent: find problems, propose fixes, brief ------------------------------ */
+  function runResolve() {
+    const fixes = proposeFixes({ events: liveEvents, analysis, zones, otherBusy, directory: dir });
+    if (!liveEvents.length) say({ text: "Connect a calendar first, then I can look for conflicts." });
+    else if (!fixes.length) say({ text: "Nothing overlaps and nothing sits inside a flight hold. You're clear." });
+    else say({ kind: "fixes", text: `I found ${fixes.length} problem${fixes.length > 1 ? "s" : ""}. For each one I kept the more important or less movable event and found a new time that works for everyone involved. Apply them one at a time, or all at once.`, fixes });
+  }
+
+  function applyFixes(fixes) {
+    const todo = fixes.filter((f) => f.canApply && !applied.has(f.id));
+    if (!todo.length) return;
+    const byId = Object.fromEntries(todo.map((f) => [f.move.id, f.newSlot]));
+    setEvents((prev) => prev.map((e) => (byId[e.id] ? { ...e, day: byId[e.id].day, start: byId[e.id].start, end: byId[e.id].end, moved: true } : e)));
+    setApplied((a) => new Set([...a, ...todo.map((f) => f.id)]));
+    setLog((prev) => [
+      { id: uid(), lines: todo.map((f) => `${f.move.title} moved from ${f.move.from} to ${f.to} (${f.move.calendar} calendar).${f.move.with.length ? ` Note sent to ${list(f.move.with)}.` : ""}`) },
+      ...prev,
+    ]);
+  }
+
+  async function runBrief() {
+    setBusy("Reading your week");
+    const facts_ = briefFacts({ events: liveEvents, analysis, zones, roster, imported, team: TEAM, unsynced: unsynced.length });
+    const out = await callLLM("brief", { facts: facts_ });
+    say({ text: out.brief });
+  }
+
   /* ------------------------------ chat router ------------------------------ */
   async function sendChat(text) {
     if (!text.trim() || busy) return;
@@ -414,10 +449,14 @@ export default function Workspace({ mode, quick }) {
       } else if (r.intent === "recall") {
         setBusy("Reading the knowledge base");
         say({ text: (await recall(text, names)).answer });
+      } else if (r.intent === "resolve") {
+        runResolve();
+      } else if (r.intent === "brief") {
+        await runBrief();
       } else if (r.intent === "sync") {
         say({ text: syncNow() || (liveEvents.length ? "Everything is already synced: every event is at least a Busy block on all three calendars." : "Connect a calendar first, then I can sync.") });
       } else {
-        say({ text: "I can connect calendars, add teammates, learn context (\"Brad is a client\"), schedule meetings (\"schedule a meeting with Jake and Sarah\"), tell you what I know (\"what do you know about Jake?\"), and sync your calendars. What would you like?" });
+        say({ text: "I can connect calendars, add teammates, learn context (\"Brad is a client\"), schedule meetings (\"schedule a meeting with Jake and Sarah\"), tell you what I know (\"what do you know about Jake?\"), find and fix conflicts, brief you on your week, and sync your calendars. What would you like?" });
       }
     } catch (e) {
       console.error(e);
@@ -485,10 +524,11 @@ export default function Workspace({ mode, quick }) {
     setOverlay(Object.fromEntries(PEOPLE.map((p) => [p, false])));
     setNotes({});
     setAnalysis({});
-    setMessages([{ id: "greet", kind: "bot", text: GREETING[mode] }]);
+    setMessages([{ id: "greet", kind: "bot", text: GREETING[mode], actions: FINAL ? AGENT_ACTIONS : undefined }]);
     setCurrent(null);
     setInvite(null);
     setInviteCount(0);
+    setApplied(new Set());
     setLog([]);
     setAnswers({});
     setSelected(null);
@@ -644,6 +684,9 @@ export default function Workspace({ mode, quick }) {
             kb={kb}
             onDeleteKb={(id) => setKb((p) => p.filter((x) => x.id !== id))}
             onClearKb={() => setKb([])}
+            applied={applied}
+            onApplyFixes={applyFixes}
+            onSuggest={sendChat}
           />
           {view === "calendar" && (
             <>

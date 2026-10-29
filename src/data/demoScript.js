@@ -8,9 +8,9 @@ import { OWN_CONTEXT, TEAM_CONTEXT } from "./mock.js";
 
 export const SETUP = [
   "Run `npm run dev` and open http://localhost:5173/fresh.html (the new, blank app). Keep http://localhost:5173/ open in another window: that is the finished product to compare against.",
-  "Top right should say **Ollama connected** and show a model (for example llama3.2). If it says not reachable, start Ollama; the app still works by falling back to canned answers, but it won't be a live model.",
-  "Timing on a CPU with a 3B model (llama3.2): a short answer takes 3 to 10 seconds, teaching one sentence 10 to 25 seconds (so the five-line paste in Part 4 takes one to two minutes), and a ranked list of meeting options 10 to 45 seconds. The first call after Ollama has been idle can take longer while it loads the model, so send \"hello\" to the assistant first. If the room can't wait, switch **Model** in the header to **Mock** for the slow steps and back again; the screens are identical.",
-  "A small model is the weakest part. Code checks everything it returns (names, numbers, times, working hours), so a bad answer is repaired or replaced and the **LLM trace** says so, but its wording will sometimes be clumsy. That is expected.",
+  "The product screen has no developer controls. To see the model picker and the LLM trace, add `?dev=1` to the address (for example http://localhost:5173/fresh.html?dev=1). With it on, the top right shows whether Ollama is connected; if it isn't running, the app still works by falling back to its built-in rules.",
+  "Timing on a CPU with a 3B model (llama3.2): a short answer takes 3 to 10 seconds, teaching one sentence 10 to 25 seconds (so the five-line paste in Part 4 takes one to two minutes), and a ranked list of meeting options 10 to 45 seconds. The first call after Ollama has been idle can take longer while it loads the model, so send \"hello\" to the assistant first. If the room can't wait, add `?dev=1` and switch **Model** to **Mock** for the slow steps and back again; the screens are identical.",
+  "A small model is the weakest part. Code checks everything it returns (names, numbers, times, working hours), so a bad answer is repaired or replaced and the LLM trace (with `?dev=1`) says so, but its wording will sometimes be clumsy. That is expected.",
   "If you've been through the script already, click **Reset to blank** to start over.",
 ];
 
@@ -28,16 +28,16 @@ export const DEMO = [
       {
         title: "Import all three calendars",
         prompt: "Import my work, personal, and club calendars",
-        expect: "Three calendars connect (Work 18 events, Personal 5, Club 3) and the week fills in. The Calendars panel says 8 events are on one calendar only.",
+        expect: "Three calendars connect (Work 20 events, Personal 7, Club 3) and the week fills in. The Calendars panel says 10 events are on one calendar only. The assistant also offers two buttons, **Brief me on my week** and **Fix my conflicts**. Leave them for Part 5.",
       },
       {
         title: "Show and hide calendars",
-        do: "Untick Personal above the grid: the Monday and Thursday flights, the dentist and the lunch disappear. Tick it again.",
+        do: "Untick Personal above the grid: the Monday and Thursday flights, the dentist, the lunch with Maya, the landlord call, the haircut and the apartment tour disappear. Tick it again.",
         say: "One master view, with a checkbox per calendar.",
       },
       {
         title: "Spot the problems no one can see",
-        do: "Look at Heads-up under the calendar. Friday's club recruiting panel double-books the team retro: two calendars, one slot.",
+        do: "Look at Heads-up under the calendar and at the overlapping blocks in the grid. Real double-bookings across calendars: Monday's team lunch and lunch with Maya, Tuesday's partner review and club case prep, Wednesday's client steering committee and a call with your landlord, Thursday's deep dive and Model sync, Friday's check-in with Jake and a haircut, and Friday's team retro and the club recruiting panel.",
         say: "That conflict only exists because the calendars are merged. Today nobody can see it.",
       },
       {
@@ -56,7 +56,7 @@ export const DEMO = [
       {
         title: "Teach the flight rule",
         prompt: OWN_CONTEXT[0],
-        expect: "Hatched Soft hold bands appear next to each flight. Monday 4:00 to 5:00 PM sits right before the 5 PM ORD to LGA flight (the hold after landing, 7:10 to 8:10 PM, is past the bottom of the grid), and Thursday evening is held before the return flight. Heads-up now says the 1:1 with Sarah sits inside the flight soft hold.",
+        expect: "Hatched Soft hold bands appear next to each flight: Monday 4:00 to 5:00 PM before the 5 PM ORD to LGA flight and 7:10 to 8:10 PM after landing, and Thursday 7:00 to 8:00 PM before the 8 PM return and 10:00 to 11:00 PM after it. Heads-up now says the 1:1 with Sarah sits inside the flight soft hold.",
         say: "I never had to tell it about the flights. They came from Outlook. I only told it how I travel.",
       },
       {
@@ -78,7 +78,7 @@ export const DEMO = [
       {
         title: "Add their calendars",
         prompt: "Add calendars for Jake, Alyssa, Brad, Sarah, and Priya",
-        expect: "Each calendar connects (Jake 21 events, Alyssa 11, Brad 6, Sarah 17, Priya 12).",
+        expect: "Each calendar connects (Jake 21 events, Alyssa 13, Brad 6, Sarah 18, Priya 12).",
         say: "In real life this is an Outlook sign-in per person.",
       },
       {
@@ -138,9 +138,25 @@ export const DEMO = [
   },
   {
     id: "schedule",
-    title: "Part 5. Schedule meetings",
-    pitch: "Everything above is what lets one sentence produce a good meeting.",
+    title: "Part 5. Let it work for you",
+    pitch: "Everything above is what lets Pascal act for you: brief you, clean up your calendar, and schedule a meeting from one sentence.",
     steps: [
+      {
+        title: "Get briefed",
+        prompt: "Brief me on my week",
+        expect: "A short paragraph: how many events, the busiest day, how many of them clash, your two flights, that the 1:1 with Sarah sits inside a flight's soft hold, the most important meetings, and that Priya is out Friday.",
+        say: "That's the first thing I'd want every Monday.",
+      },
+      {
+        title: "Have it fix the conflicts",
+        prompt: "Fix my conflicts",
+        expect: "Seven proposals, each showing what it kept and what it will move and why. For example it keeps the Helix deep dive with Sarah and moves Model sync to Thursday 12:00 PM, and drafts a note to Alyssa; it moves club prep out of the way of the partner review, the landlord call out of the client steering committee, the haircut out of Jake's check-in, and your 1:1 with Sarah out of the pre-flight hold. It never moves a flight or anything with Brad.",
+      },
+      {
+        title: "Apply them",
+        do: "Click **Apply all 7** (or **Apply** on one at a time). The calendar updates, Heads-up empties of overlaps, and the Activity log lists each move and who was notified.",
+        say: "It decided using what I taught it: Sarah and the partner outrank a peer and a club event, and Alyssa's meetings move easily.",
+      },
       {
         title: "A three-person meeting with a partner and a client",
         prompt: "Schedule a meeting with Jake, Alyssa, and Brad",
@@ -163,7 +179,7 @@ export const DEMO = [
       },
       {
         title: "Compare to the finished product",
-        do: "Open http://localhost:5173/ (the finished app) next to this one. Same calendars, team, knowledge base and soft holds (minus the meetings you just booked). Click **Show LLM trace** to see every model call you just made.",
+        do: "Open http://localhost:5173/ (the finished app) next to this one. Same calendars, team, knowledge base and soft holds (minus the meetings you just booked). With `?dev=1` on the address, **Show LLM trace** lists every model call you just made.",
         say: "That's the whole product. Calendars, rules, people, context, and one place to ask.",
       },
     ],

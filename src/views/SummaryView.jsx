@@ -15,7 +15,7 @@ export default function SummaryView() {
   return (
     <div className="mg">
       <header className="mg-top">
-        <div className="mg-brand"><h1>margin</h1><p>Walkthrough and docs</p></div>
+        <div className="mg-brand"><h1>Pascal</h1><p>Walkthrough and docs</p></div>
         <nav className="mg-foot" style={{ margin: 0 }}>
           <a href="/">Finished app</a><a href="/fresh.html">New app</a><a href="/demo.html">Demo script</a>
         </nav>

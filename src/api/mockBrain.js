@@ -136,6 +136,8 @@ export function mockRoute({ text, people, has_options }) {
   // adding people to the team list is separate from adding their calendars
   if (/\b(add|invite)\b/.test(l) && /\b(teammates?|team members?|to my team|to the team|my team)\b/.test(l) && !/\bcalendars?\b/.test(l)) return { intent: "team", names: importNames };
   if (/\b(import|connect|bring in|load|add)\b/.test(l) && /\b(calendars?|teammates?|team|everyone|everybody)\b/.test(l)) return { intent: "import", calendars, names: importNames };
+  if (/\b(fix|resolve|clean up|sort out|deal with)\b.*\b(conflicts?|double.?book\w*|overlaps?|clashes?)\b|\bwhat conflicts\b|\bany conflicts\b/.test(l)) return { intent: "resolve", names };
+  if (/\b(brief me|briefing|summari[sz]e my|overview of my|how('s| is) my week|what does my week look like)\b/.test(l)) return { intent: "brief", names };
   if (/\b(sync|mirror)\b/.test(l)) return { intent: "sync", names };
   if (/what do you (know|remember)|tell me about|who is|who are|remind me|what('s| is) the context|what have i told you|who should|which of (my|the)/.test(l)) return { intent: "recall", names };
   if (teachLike(l, people)) return { intent: "teach", names };
@@ -149,6 +151,21 @@ export function mockRecall({ knowledge_base = [], context_notes = [] }) {
   if (!knowledge_base.length && !context_notes.length) return { answer: "I haven't been taught anything yet. Tell me who is who, or how you like your calendar handled." };
   if (context_notes.length) return { answer: context_notes.map((n) => `${n.name}: ${n.text}.`).join("\n") };
   return { answer: "Here is everything you've told me:\n" + knowledge_base.map((t) => `- ${t}`).join("\n") };
+}
+
+/* ------------------------------ brief (week briefing) ------------------------------ */
+export function mockBrief({ facts: f }) {
+  const s = [];
+  if (!f.meetings) return { brief: "Your calendar is empty. Connect a calendar and I'll brief you." };
+  s.push(`You have ${f.meetings} events this week${f.busiest_day ? `, busiest on ${f.busiest_day}` : ""}.`);
+  if (f.conflicts.length) s.push(`${f.conflicts.length} of them clash: ${list(f.conflicts.slice(0, 3))}${f.conflicts.length > 3 ? ", and more" : ""}. I can fix these.`);
+  else s.push("Nothing overlaps.");
+  if (f.flights.length) s.push(`You're flying: ${list(f.flights)}.`);
+  if (f.meetings_inside_flight_holds.length) s.push(`${list(f.meetings_inside_flight_holds)} sits inside a flight's soft hold.`);
+  if (f.important_meetings.length) s.push(`Most important: ${list(f.important_meetings.slice(0, 3))}.`);
+  if (f.teammates_out.length) s.push(`${list(f.teammates_out)}.`);
+  if (f.events_colleagues_cannot_see) s.push(`${f.events_colleagues_cannot_see} of your events are invisible to colleagues until you sync.`);
+  return { brief: s.join(" ") };
 }
 
 /* ------------------------------ rank ------------------------------ */
@@ -225,6 +242,7 @@ export function mockTask(task, input) {
     case "parse": return mockParse(input);
     case "route": return mockRoute(input);
     case "recall": return mockRecall(input);
+    case "brief": return mockBrief(input);
     case "rank": return mockRank(input);
     case "advice": return mockAdvice(input);
     default: throw new Error(`mockBrain: unknown task ${task}`);

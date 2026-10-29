@@ -137,3 +137,22 @@ Third build: a real model, two apps, a teammate roster.
 ## D27. Code reads names, calendars, option numbers and buffer minutes from your words
 - **Chose:** the router model only picks an intent. `routeEntities` finds names, which calendar, and "option 2" in the text. `sayMinutes` sets buffer minutes from "an hour", "30 minutes" and before/after when the sentence states them.
 - **Why:** small models returned every teammate when asked to import one calendar, and doubled an hour. These are facts, so they belong to code.
+
+---
+
+Fourth build: an agent, not just an assistant.
+
+## D28. The product screen has no developer controls
+- **Chose:** the model picker, the LLM trace and the links between pages only show with `?dev=1`. The app probes Ollama quietly and falls back to its built-in rules if nothing is running.
+- **Why:** what someone sees should be the product, not the plumbing. The demo script mentions `?dev=1` where a presenter needs it.
+
+## D29. Pascal finds problems and proposes fixes you can apply
+- **Chose:** `lib/resolve.js` finds every overlap (often across calendars) and every meeting inside a flight's soft hold, keeps the event with the higher priority and lower flexibility, finds a new time with the same search used for scheduling (everyone's calendars, working hours and holds), drafts the note to anyone affected, and applies it on click. Moves are planned sequentially so two fixes never collide.
+- **Rejected:** letting the model choose what to move; applying fixes silently.
+- **Why:** it's the same split as everywhere else. The model's job was to learn what matters to you (priority, flexibility from what you taught); choosing and placing is arithmetic. Nothing changes without a click.
+- **Known gap:** moved meetings can land back-to-back with another (soft warning). The slot search takes the first free time, not the one with the most breathing room.
+
+## D30. A weekly briefing, and buttons that offer the next step
+- **Chose:** `brief` gathers counted facts (conflicts, flights, holds, important meetings, who's out) in code and a model only writes the paragraph. After your calendars connect, the assistant offers "Brief me on my week" and "Fix my conflicts" as buttons.
+- **Why:** an agent should say what needs attention without being asked the right question.
+- **Seed data:** the sample calendars now contain six realistic double-bookings across work, personal and club calendars, plus a meeting inside a flight hold, so there is something to find.

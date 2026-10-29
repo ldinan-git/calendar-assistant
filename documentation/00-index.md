@@ -1,6 +1,6 @@
 # Documentation index
 
-Project: **margin**, an AI calendar assistant you teach in plain English. Class project, built with Claude. Started 2026-10-29.
+Project: **Pascal** (formerly "margin"), an AI calendar agent you teach in plain English. Class project, built with Claude. Started 2026-10-29.
 
 This folder is a working dump, not a polished write-up. The point is to show the process of working with AI: what was asked, what came back, what was kept, what was thrown out, and what is still unverified.
 
@@ -28,7 +28,7 @@ Other places:
 ```bash
 npm install
 npm run dev          # finished app at :5173/, new app at :5173/fresh.html, script at /demo.html
-npm run check:flow   # 96 assertions: data, time zones, knowledge base, validators, scheduling, booking
+npm run check:flow   # 109 assertions: data, time zones, knowledge base, validators, scheduling, booking
 npm run gen:demo     # regenerate documentation/10-demo-script.md
 npm run gen:data     # regenerate src/data/graph/*.json from scripts/gen-graph-data.mjs
 ```

@@ -139,7 +139,7 @@ function checkParse(out) {
   };
 }
 
-const INTENTS = ["schedule", "teach", "recall", "book", "team", "import", "sync", "chat"];
+const INTENTS = ["schedule", "teach", "recall", "book", "team", "import", "sync", "resolve", "brief", "chat"];
 function checkRoute(out, input) {
   if (!out || !INTENTS.includes(out.intent)) fail("unknown intent");
   // the model only decides the intent; names, calendars and option numbers are read from the text by code
@@ -167,6 +167,7 @@ function checkRank(out, input) {
 }
 
 const checkRecall = (out) => (out && str(out.answer).trim() ? { answer: out.answer.trim() } : fail("recall needs an answer"));
+const checkBrief = (out) => (out && str(out.brief).trim() ? { brief: out.brief.trim() } : fail("brief needs text"));
 const checkAdvice = (out) => (out && str(out.advice).trim() ? { advice: out.advice.trim() } : fail("advice needs text"));
 
 export function check(task, out, input) {
@@ -178,6 +179,7 @@ export function check(task, out, input) {
     case "rank": return checkRank(out, input);
     case "recall": return checkRecall(out);
     case "advice": return checkAdvice(out);
+    case "brief": return checkBrief(out);
     default: return out;
   }
 }

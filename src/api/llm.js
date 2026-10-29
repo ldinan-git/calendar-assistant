@@ -17,7 +17,7 @@ import { check } from "./validate.js";
 const env = import.meta.env || {};
 const DELAY = Number(env.VITE_MOCK_DELAY_MS ?? 400);
 const OLLAMA_URL = env.VITE_OLLAMA_URL || "http://localhost:11434";
-const STORE = "margin-llm";
+const STORE = "pascal-llm";
 
 /* ------------------------------ settings (provider, model) ------------------------------ */
 const hasStorage = typeof localStorage !== "undefined";

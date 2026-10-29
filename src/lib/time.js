@@ -1,8 +1,8 @@
 export const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 export const DATES = ["Nov 2", "Nov 3", "Nov 4", "Nov 5", "Nov 6"];
 export const GRID_START = 8 * 60;
-export const GRID_END = 18 * 60;
-export const PPM = 0.9; // pixels per minute in the calendar grid
+export const GRID_END = 23 * 60;
+export const PPM = 0.8; // pixels per minute in the calendar grid
 export const WORK_START = 9 * 60;
 export const WORK_END = 17 * 60;
 

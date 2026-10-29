@@ -237,3 +237,11 @@ body{margin:0}
 .mg-kb summary{cursor:pointer;font-weight:700;font-size:13px}
 .mg-count{background:#EEF1F5;border-radius:999px;padding:0 8px;font-size:12px;margin-left:4px}
 .mg-kb .mg-facts{margin:8px 0;max-height:240px;overflow:auto}
+
+/* ---- v5: agent actions ---- */
+.mg-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.mg-fixes{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.mg-fix{border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:8px;padding:8px 10px;background:#FBFCFD}
+.mg-fix.done{border-left-color:var(--ok);opacity:.65}
+.mg-fix-move{margin:4px 0;font-size:13px}
+.mg-note{font-style:italic}

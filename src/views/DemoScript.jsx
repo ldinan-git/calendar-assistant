@@ -25,7 +25,7 @@ export default function DemoScript() {
   return (
     <div className="mg">
       <header className="mg-top">
-        <div className="mg-brand"><h1>margin</h1><p>Demo script: from the new app to the finished product</p></div>
+        <div className="mg-brand"><h1>Pascal</h1><p>Demo script: from the new app to the finished product</p></div>
         <nav className="mg-foot" style={{ margin: 0 }}>
           <a href="/fresh.html" target="_blank" rel="noreferrer">Open the new app</a>
           <a href="/" target="_blank" rel="noreferrer">Open the finished app</a>

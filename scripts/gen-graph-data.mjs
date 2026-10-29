@@ -129,6 +129,8 @@ const SHARED = {
   helixDeep: { day: 3, s: "10:00", e: "12:00", subject: "Helix workplan deep dive", organizer: "sarah", people: ["sarah", "you"], online: "teams", key: "helix-deep", body: "Two hours on the workplan." },
   handoff: { day: 3, s: "09:30", e: "10:00", subject: "Data handoff with Priya", organizer: "you", people: ["you", "priya"], online: "teams", key: "handoff-thu", body: "Hand over the cleaned dataset." },
   checkin: { day: 4, s: "11:00", e: "11:30", subject: "Weekly check-in with Jake", organizer: "jake", people: ["jake", "you"], online: "teams", key: "jake-checkin", imp: "high", body: "Standing weekly check-in." },
+  teamLunch: { day: 0, s: "12:00", e: "13:00", subject: "Team lunch", organizer: "sarah", people: ["sarah", "alyssa", "you"], loc: "Chicago office, Commons", key: "team-lunch", body: "Monthly team lunch." },
+  modelSync: { day: 3, s: "11:00", e: "12:00", subject: "Model sync", organizer: "alyssa", people: ["alyssa", "you"], online: "teams", key: "model-sync", body: "Walk through the updated pricing model." },
   retro: { day: 4, s: "14:00", e: "15:00", subject: "Team retro", organizer: "sarah", people: ["sarah", "alyssa", "you"], loc: "Chicago office, 14B", key: "team-retro", body: "Retro on the Helix sprint." },
 };
 
@@ -150,6 +152,8 @@ const workYou = [
   Y(SHARED.helixDeep),
   Y(SHARED.checkin),
   Y(SHARED.retro),
+  Y(SHARED.teamLunch),
+  Y(SHARED.modelSync),
 ];
 
 const personalYou = [
@@ -158,12 +162,14 @@ const personalYou = [
   // Outbound: Mon 5:00 PM CT, ORD to LGA. Lands 7:10 PM CT. Arrives in New York for the Tue to Thu client work.
   Y({ day: 0, s: "17:00", e: "19:10", subject: "UA 482 ORD to LGA", loc: "O'Hare Terminal 1", cat: ["Travel", "Flights"], key: "ua482", imp: "high", body: "United Airlines UA 482. Departs ORD 5:00 PM CT, arrives LGA 8:10 PM ET. Confirmation K7QX2M. Added automatically from your email." }),
   // Return: Thu evening
-  Y({ day: 3, s: "18:30", e: "21:05", subject: "UA 1127 LGA to ORD", loc: "LaGuardia Terminal B", cat: ["Travel", "Flights"], key: "ua1127", imp: "high", body: "United Airlines UA 1127. Departs LGA 7:30 PM ET, arrives ORD 9:05 PM CT. Confirmation K7QX2M." }),
+  Y({ day: 3, s: "20:00", e: "22:00", subject: "UA 1127 LGA to ORD", loc: "LaGuardia Terminal B", cat: ["Travel", "Flights"], key: "ua1127", imp: "high", body: "United Airlines UA 1127. Departs LGA 9:00 PM ET, arrives ORD 10:00 PM CT. Confirmation K7QX2M." }),
+  Y({ day: 2, s: "11:30", e: "12:00", subject: "Call with landlord", key: "landlord", priv: true }),
+  Y({ day: 4, s: "11:15", e: "12:00", subject: "Haircut", loc: "River North", key: "haircut", priv: true }),
   Y({ day: 4, s: "16:00", e: "17:00", subject: "Apartment tour", loc: "River North", key: "apt-tour", priv: true }),
 ];
 
 const orgYou = [
-  Y({ day: 1, s: "16:00", e: "17:00", subject: "Case competition prep", online: "zoom", key: "case-prep" }),
+  Y({ day: 1, s: "14:00", e: "15:30", subject: "Case competition prep", online: "zoom", key: "case-prep" }),
   Y({ day: 2, s: "12:00", e: "13:00", subject: "Consulting Club speaker lunch", online: "zoom", key: "club-lunch" }),
   Y({ day: 4, s: "14:00", e: "15:00", subject: "Consulting Club recruiting panel", loc: "Harper Center Auditorium", key: "club-panel" }),
 ];
@@ -247,6 +253,8 @@ write(
     A(SHARED.debrief),
     A({ day: 3, s: "15:00", e: "15:30", subject: "Coffee chat with new analyst", key: "coffee-analyst" }),
     A(SHARED.retro),
+    A(SHARED.teamLunch),
+    A(SHARED.modelSync),
   ])
 );
 
@@ -268,6 +276,7 @@ write(
     S({ day: 3, s: "14:00", e: "15:00", subject: "Team 1:1 with Alyssa", people: ["sarah", "alyssa"], online: "teams", key: "sarah-aly" }),
     S({ day: 4, s: "12:30", e: "13:30", subject: "Lunch with mentor", key: "sarah-mentor", priv: true }),
     S(SHARED.retro),
+    S(SHARED.teamLunch),
   ])
 );
 

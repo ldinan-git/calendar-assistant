@@ -65,7 +65,7 @@ Step 6 is a small guardrail: the LLM can only choose among slots that code alrea
 
 All in `App.jsx`:
 - `events` (the user's merged calendar, mutated by booking / accept / decline)
-- `facts` and `notes` (persisted in localStorage under `margin-state-v2`)
+- `facts` and `notes` (persisted in localStorage under `no longer persisted; see D21`)
 - `analysis` (latest `analyze` result: per-event priority, flexibility, type, reason)
 - `connected` (which teammate calendars the assistant may read), `synced` (event ids already mirrored)
 - `messages` (the chat), `current` (the options currently on offer), `log` (activity), invite state

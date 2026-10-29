@@ -26,6 +26,8 @@ try {
   const A = await server.ssrLoadModule("/src/lib/analysis.js");
   const B = await server.ssrLoadModule("/src/lib/booking.js");
   const G = await server.ssrLoadModule("/src/lib/graph.js");
+  const R = await server.ssrLoadModule("/src/lib/resolve.js");
+  const BR = await server.ssrLoadModule("/src/lib/brief.js");
   const { slotLabel, DAYS } = await server.ssrLoadModule("/src/lib/time.js");
   const { withinWorkingHours } = await server.ssrLoadModule("/src/lib/tz.js");
   const ev = M.INITIAL_EVENTS;
@@ -47,9 +49,9 @@ try {
   ok(!withinWorkingHours(M.DIRECTORY.Priya.hours, 0, 540, 600), "Priya's calendar says 9 AM to 6 PM IST, so 9 AM Central is outside her calendar working hours (the messy part)");
   const flight = byTitle("UA 482 ORD to LGA");
   ok(flight && flight.day === 0 && flight.start === 17 * 60 && flight.categories.includes("Flights"), "your flight: Monday 5:00 PM, ORD to LGA, Outlook 'Flights' category");
-  ok(byTitle("UA 1127 LGA to ORD").day === 3, "return flight Thursday evening");
+  ok(byTitle("UA 1127 LGA to ORD").day === 3 && byTitle("UA 1127 LGA to ORD").start === 20 * 60 && byTitle("UA 1127 LGA to ORD").end === 22 * 60, "return flight Thursday 8:00 to 10:00 PM");
   const unsynced = G.unsyncedEvents(ev, M.MIRRORS, M.CAL_IDS);
-  ok(unsynced.length === 8 && unsynced.every((e) => e.calendar !== "cal-work"), `${unsynced.length} personal/club events are invisible to colleagues`);
+  ok(unsynced.length === 10 && unsynced.every((e) => e.calendar !== "cal-work"), `${unsynced.length} personal/club events are invisible to colleagues`);
   ok(G.unsyncedEvents(ev, M.MIRRORS, M.CAL_IDS, new Set(unsynced.map((e) => e.id))).length === 0, "Sync now closes every gap");
 
   // 2. the knowledge base: teach with the same sentences the demo script pastes
@@ -218,6 +220,27 @@ try {
   ok(hallucinated.names.length === 0 && hallucinated.calendars.join() === "cal-work", "validate: names and calendars are read from the text, so a model can't import teammates you didn't name");
   ok(throws(() => check("rank", { options: [{ candidate_id: "zzz" }] }, { candidates: [{ id: "c1" }] })), "validate: rank option pointing at a non-existent candidate is rejected");
   ok(check("rank", { options: [{ candidate_id: "c1" }, { candidate_id: "c1" }, { candidate_id: "c9" }] }, { candidates: [{ id: "c1" }] }).options.length === 1, "validate: rank drops duplicates and invented ids");
+
+  // the agent: find every clash, keep the more important event, move the other to a slot that works for everyone
+  const fixes = R.proposeFixes({ events: ev, analysis: full, zones, otherBusy: S.teamBusy(M.TEAM), directory: dir });
+  const fixOf = (title) => fixes.find((f) => f.move.title === title);
+  ok(fixes.length >= 7, `agent: ${fixes.length} proposals for the seeded double-bookings and the flight hold`);
+  ok(fixOf("Model sync") && fixOf("Model sync").keep.title === "Helix workplan deep dive" && fixOf("Model sync").move.with.join() === "Alyssa", "agent: keeps the deep dive with Sarah, moves Model sync, and will tell Alyssa");
+  ok(fixOf("Case competition prep").keep.title === "Partner review: Helix workplan", "agent: a club event yields to the partner review");
+  ok(fixOf("Call with landlord").keep.title === "Northwind steering committee", "agent: a personal call yields to the client steering committee");
+  ok(fixOf("Consulting Club recruiting panel").keep.title === "Team retro", "agent: the club panel yields to the team retro (a cross-calendar clash)");
+  ok(fixOf("1:1 with Sarah") && fixOf("1:1 with Sarah").kind === "hold", "agent: the 1:1 inside the pre-flight hold is moved out of it");
+  ok(!fixes.some((f) => /^UA /.test(f.move.title) || f.move.with.includes("Brad")), "agent: never moves a flight or a meeting with Brad");
+  const planned = ev.map((e) => { const f = fixes.find((x) => x.move.id === e.id && x.canApply); return f ? { ...e, ...f.newSlot } : e; });
+  const issuesAfter = S.summarizeIssues(planned, S.computeFlags(planned, S.computeZones(planned, facts, full)), DAYS);
+  ok(!issuesAfter.some((i) => i.kind === "conflict"), "agent: after applying every fix, no event overlaps another");
+  ok(!planned.some((e, i) => !/^UA /.test(e.title) && S.computeFlags(planned, S.computeZones(planned, facts, full))[e.id].zone && S.computeFlags(planned, S.computeZones(planned, facts, full))[e.id].zone.kind === "flight" && fixes.some((f) => f.move.id === e.id)), "agent: moved meetings land outside flight holds");
+  const bf = BR.briefFacts({ events: ev, analysis: full, zones, roster: M.PEOPLE, imported: { team: allOn }, team: M.TEAM, unsynced: 10 });
+  ok(bf.conflicts.length >= 6 && bf.flights.length === 2 && bf.teammates_out.some((t) => /Priya.*Fri/.test(t)), "brief: counts the conflicts and flights and knows Priya is out Friday");
+  const bt = await callLLM("brief", { facts: bf });
+  ok(/clash/.test(bt.brief) && /flying/.test(bt.brief), "brief: the written briefing mentions the clashes and the flights");
+  ok((await route("Fix my conflicts")).intent === "resolve" && (await route("Do I have any conflicts?")).intent === "resolve", "route: fix conflicts");
+  ok((await route("Brief me on my week")).intent === "brief" && (await route("How's my week looking?")).intent === "brief", "route: brief me");
 
   // code owns numbers: a small model turned "an hour before and after" into 120/120
   const bad = (text, before, after) => check("extract", { facts: [{ type: "buffer_rule", trigger: { event_type: "flight" }, buffer_before_min: before, buffer_after_min: after }] }, { user_message: text }).facts[0];
