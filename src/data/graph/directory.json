@@ -113,8 +113,8 @@
             "thursday",
             "friday"
           ],
-          "startTime": "10:30:00.0000000",
-          "endTime": "22:30:00.0000000",
+          "startTime": "09:00:00.0000000",
+          "endTime": "18:00:00.0000000",
           "timeZone": {
             "name": "India Standard Time"
           }

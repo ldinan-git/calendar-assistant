@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import { slotLabel } from "../lib/time.js";
-import { ASK_EXAMPLES, TEACH_EXAMPLES } from "../data/mock.js";
+import { ASK_EXAMPLES } from "../data/mock.js";
+
+const NL = String.fromCharCode(10);
 
 function Callouts({ items }) {
   return (
@@ -61,7 +63,47 @@ function Message({ m, activeOptionsId, onHover, onBook }) {
   );
 }
 
-export default function ChatPanel({ messages, busy, input, setInput, onSend, activeOptionsId, onHover, onBook, hasFacts, onLoadDemo, loadingDemo }) {
+const kbMeta = (f) =>
+  [
+    f.type === "person" ? `person: ${f.name}` : f.type.replace("_", " "),
+    f.priority && `priority ${f.priority}`,
+    f.never_reschedule ? "never reschedule" : f.flexibility && `flexibility ${f.flexibility}`,
+    f.working_hours && `works ${f.working_hours.start} to ${f.working_hours.end} ${f.working_hours.timezone}`,
+    f.trigger && f.trigger.event_type && `on every ${f.trigger.event_type}`,
+    f.trigger && f.trigger.attendee && `around ${f.trigger.attendee}`,
+    f.type === "buffer_rule" && `${f.buffer_before_min || 0} min before, ${f.buffer_after_min || 0} after`,
+  ]
+    .filter(Boolean)
+    .join(", ");
+
+/** The knowledge base lives inside the assistant: one list the model reads, with the structure code uses under each line. */
+function KnowledgeDrawer({ kb, onDelete, onClear }) {
+  return (
+    <details className="mg-kb">
+      <summary>Knowledge base <span className="mg-count">{kb.length}</span></summary>
+      {kb.length === 0 ? (
+        <p className="mg-empty">Nothing yet. Tell the assistant who is who and how you like your calendar run.</p>
+      ) : (
+        <>
+          <ul className="mg-facts">
+            {kb.map((e) => (
+              <li key={e.id}>
+                <div>
+                  <div className="mg-fact-sum">{e.text}</div>
+                  {(e.facts || []).map((f) => (<div key={f.id} className="mg-fact-meta">{kbMeta(f)}</div>))}
+                </div>
+                <button className="mg-x" aria-label={"Forget: " + e.text} onClick={() => onDelete(e.id)}>×</button>
+              </li>
+            ))}
+          </ul>
+          <button className="mg-btn small ghost" onClick={onClear}>Forget everything</button>
+        </>
+      )}
+    </details>
+  );
+}
+
+export default function ChatPanel({ messages, busy, input, setInput, onSend, activeOptionsId, onHover, onBook, quick = [], kb = [], onDeleteKb, onClearKb }) {
   const end = useRef(null);
   useEffect(() => {
     end.current && end.current.scrollIntoView({ block: "end" });
@@ -72,6 +114,7 @@ export default function ChatPanel({ messages, busy, input, setInput, onSend, act
   return (
     <section className="mg-card mg-chat">
       <h2>Assistant</h2>
+      <KnowledgeDrawer kb={kb} onDelete={onDeleteKb} onClear={onClearKb} />
       <div className="mg-chat-log" role="log" aria-live="polite">
         {messages.map((m) => (
           <Message key={m.id} m={m} activeOptionsId={activeOptionsId} onHover={onHover} onBook={onBook} />
@@ -83,7 +126,7 @@ export default function ChatPanel({ messages, busy, input, setInput, onSend, act
         <textarea
           rows={2}
           value={input}
-          placeholder="Schedule a meeting with Jake, Alyssa, and Brad"
+          placeholder="Paste or type anything. Shift+Enter for a new line."
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === "Enter" && !e.shiftKey) {
@@ -99,15 +142,16 @@ export default function ChatPanel({ messages, busy, input, setInput, onSend, act
           <button key={x} className="mg-chip" disabled={!!busy} onClick={() => submit(x)}>{x}</button>
         ))}
       </div>
-      <details className="mg-json" open={!hasFacts}>
-        <summary>Teach it about your team</summary>
-        <div className="mg-chips">
-          <button className="mg-btn small ghost" disabled={!!busy || loadingDemo} onClick={onLoadDemo}>{loadingDemo ? "Teaching" : "Teach it all six"}</button>
-          {TEACH_EXAMPLES.map((x) => (
-            <button key={x} className="mg-chip" disabled={!!busy} onClick={() => submit(x)}>{x}</button>
-          ))}
-        </div>
-      </details>
+      {quick.length > 0 && (
+        <details className="mg-json">
+          <summary>More prompts to click</summary>
+          <div className="mg-chips">
+            {quick.map((x) => (
+              <button key={x} className="mg-chip" disabled={!!busy} onClick={() => submit(x)}>{x.split(NL)[0] + (x.includes(NL) ? " (+ more lines)" : "")}</button>
+            ))}
+          </div>
+        </details>
+      )}
     </section>
   );
 }

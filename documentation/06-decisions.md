@@ -101,3 +101,39 @@ The decisions below came with the second build (new cast, Outlook-shaped data, c
 - **Chose:** `analyze`, `parse`, `route`, `rank`, `advice` are answered by deterministic functions in `src/api/mockBrain.js` that return the live prompts' JSON shape. Teaching (`extract`) stays as fixture files routed by the manifest.
 - **Rejected:** per-scenario fixture files.
 - **Why:** fixtures keyed by event id or by combinations of taught facts do not survive a realistic calendar. See `04-mock-layer.md`.
+
+---
+
+Third build: a real model, two apps, a teammate roster.
+
+## D21. Two apps from one codebase, no tabs
+- **Chose:** `index.html` is the finished product, `fresh.html` the same app starting blank, `demo.html` the script, `summary.html` the docs. `Workspace` takes `mode="fresh" | "final"`, which only changes the starting state.
+- **Rejected:** a tab bar switching between a fresh and a finished view in one page (my first attempt), and two separate codebases.
+- **Why:** the finished app must be exactly what you end up with after the script, so it can't be a different program. A page per purpose also keeps the product screen free of demo chrome.
+
+## D22. People and their calendars are separate steps
+- **Chose:** a roster (`Add Jake as a teammate`) and, separately, `Add Jake's calendar`. The new app starts with no roster. Asking for a meeting with someone not on the roster is refused with the exact sentence to add them.
+- **Rejected:** a fixed team that's always there.
+- **Why:** the demo's point is setup. It also matches real life: you know who your team is before you have access to their calendars.
+
+## D23. What you taught overrides what the calendar says
+- **Chose:** `effectiveDirectory` builds each teammate's profile from their calendar's mailbox settings and then overrides with taught `working_hours`, `timezone` and `location`. With neither, a teammate is assumed to keep your hours.
+- **Why:** teams are messy and calendars are often wrong about people. Priya's calendar says 9 to 6 in India (no overlap with you at all); the truth is 8 AM to 12 PM Eastern. The scheduler, the Compare view and the shading all read the effective profile, so one sentence changes everything consistently.
+
+## D24. One knowledge base, inside the assistant
+- **Chose:** a single list of the user's own sentences, each with the structured facts derived from it, shown as a drawer in the chat. The model gets the plain sentences for any question about context; code reads the structured part. No per-person profile store and no panel on the home screen.
+- **Rejected:** a separate knowledge-base module, and a profile attached to each person.
+- **Why:** it's what the user asked for: one place you can prompt. Per-person views are derived (the Teammates tab's "Ask the knowledge base" is just a question to the same list).
+
+## D25. A local model behind validation, a queue and per-call fallback
+- **Chose:** Ollama as the default provider, with `validate.js` checking every answer, one retry, repair where code can, and a fallback to the mock for that single call, recorded in the trace. A priority queue puts chat calls ahead of background work, because a local model serves one request at a time.
+- **Why:** with `llama3.2` (3B, CPU only) the first real run showed wrong numbers (120/120 minutes), made-up times in explanations, one option instead of three, hallucinated teammates in an import, and a stall when the context size changed between requests (Ollama reloads the model; fixed by not setting `num_ctx`). Each is now a code guard with a test.
+
+## D26. Rating the calendar is rules plus taught facts by default
+- **Chose:** `analyze` is deterministic unless the provider is the Claude API or `VITE_LLM_ANALYZE=1`. Ratings also appear instantly as a provisional rating and are refined if a model is rating.
+- **Rejected:** model-rated events on every change.
+- **Why:** measured on the 3B model: 75 to 83 seconds per pass, all 12 judged events failed validation, and it queued ahead of chat. Not a good trade for a rating a rule gets right.
+
+## D27. Code reads names, calendars, option numbers and buffer minutes from your words
+- **Chose:** the router model only picks an intent. `routeEntities` finds names, which calendar, and "option 2" in the text. `sayMinutes` sets buffer minutes from "an hour", "30 minutes" and before/after when the sentence states them.
+- **Why:** small models returned every teammate when asked to import one calendar, and doubled an hour. These are facts, so they belong to code.

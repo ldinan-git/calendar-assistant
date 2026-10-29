@@ -104,11 +104,11 @@
         "content": ""
       },
       "start": {
-        "dateTime": "2026-11-03T08:00:00.0000000",
+        "dateTime": "2026-11-02T08:00:00.0000000",
         "timeZone": "Central Standard Time"
       },
       "end": {
-        "dateTime": "2026-11-03T09:00:00.0000000",
+        "dateTime": "2026-11-02T08:45:00.0000000",
         "timeZone": "Central Standard Time"
       },
       "location": {
@@ -146,8 +146,8 @@
       "reminderMinutesBeforeStart": 120,
       "isReminderOn": true,
       "hasAttachments": false,
-      "subject": "UA 482 ORD to DEN",
-      "bodyPreview": "United Airlines UA 482. Departs ORD 3:00 PM, arrives DEN 4:55 PM MST. Confirmation K7QX2M. Added automatically from your email.",
+      "subject": "UA 482 ORD to LGA",
+      "bodyPreview": "United Airlines UA 482. Departs ORD 5:00 PM CT, arrives LGA 8:10 PM ET. Confirmation K7QX2M. Added automatically from your email.",
       "importance": "high",
       "sensitivity": "normal",
       "isAllDay": false,
@@ -168,14 +168,14 @@
       },
       "body": {
         "contentType": "text",
-        "content": "United Airlines UA 482. Departs ORD 3:00 PM, arrives DEN 4:55 PM MST. Confirmation K7QX2M. Added automatically from your email."
+        "content": "United Airlines UA 482. Departs ORD 5:00 PM CT, arrives LGA 8:10 PM ET. Confirmation K7QX2M. Added automatically from your email."
       },
       "start": {
-        "dateTime": "2026-11-04T15:00:00.0000000",
+        "dateTime": "2026-11-02T17:00:00.0000000",
         "timeZone": "Central Standard Time"
       },
       "end": {
-        "dateTime": "2026-11-04T17:00:00.0000000",
+        "dateTime": "2026-11-02T19:10:00.0000000",
         "timeZone": "Central Standard Time"
       },
       "location": {
@@ -197,71 +197,11 @@
       }
     },
     {
-      "@odata.etag": "W/\"1tyu6c3\"",
-      "id": "AAMkAGE10hd6fu90M8OHGRAAA=",
+      "@odata.etag": "W/\"0akpalb\"",
+      "id": "AAMkAGE10h5hh431TEXP1DAAA=",
       "createdDateTime": "2026-10-22T14:11:03.4120000Z",
       "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
-      "changeKey": "0gc4e20",
-      "categories": [],
-      "transactionId": null,
-      "originalStartTimeZone": "Central Standard Time",
-      "originalEndTimeZone": "Central Standard Time",
-      "iCalUId": "040000008200E00074C5B7101A82E0080RDLDSY",
-      "reminderMinutesBeforeStart": 15,
-      "isReminderOn": true,
-      "hasAttachments": false,
-      "subject": "Gym",
-      "bodyPreview": "",
-      "importance": "normal",
-      "sensitivity": "private",
-      "isAllDay": false,
-      "isCancelled": false,
-      "isOrganizer": true,
-      "responseRequested": true,
-      "seriesMasterId": null,
-      "showAs": "busy",
-      "type": "singleInstance",
-      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10rdldsy1CCWYPAAAA=&exvsurl=1&path=/calendar/item",
-      "isOnlineMeeting": false,
-      "onlineMeetingProvider": "unknown",
-      "onlineMeetingUrl": null,
-      "onlineMeeting": null,
-      "responseStatus": {
-        "response": "organizer",
-        "time": "2026-10-27T09:41:57Z"
-      },
-      "body": {
-        "contentType": "text",
-        "content": ""
-      },
-      "start": {
-        "dateTime": "2026-11-05T17:15:00.0000000",
-        "timeZone": "Central Standard Time"
-      },
-      "end": {
-        "dateTime": "2026-11-05T18:15:00.0000000",
-        "timeZone": "Central Standard Time"
-      },
-      "location": {
-        "displayName": "",
-        "locationType": "default"
-      },
-      "locations": [],
-      "recurrence": null,
-      "attendees": [],
-      "organizer": {
-        "emailAddress": {
-          "name": "Luke Dinan",
-          "address": "luke.dinan@firmname.example"
-        }
-      }
-    },
-    {
-      "@odata.etag": "W/\"0nn56ik\"",
-      "id": "AAMkAGE11np0nqq1X5HE9QAAA=",
-      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
-      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
-      "changeKey": "1romthb",
+      "changeKey": "0g6iq58",
       "categories": [
         "Travel",
         "Flights"
@@ -269,12 +209,12 @@
       "transactionId": null,
       "originalStartTimeZone": "Central Standard Time",
       "originalEndTimeZone": "Central Standard Time",
-      "iCalUId": "040000008200E00074C5B7101A82E0080G2TJVD",
+      "iCalUId": "040000008200E00074C5B7101A82E0080AA0JXI",
       "reminderMinutesBeforeStart": 120,
       "isReminderOn": true,
       "hasAttachments": false,
-      "subject": "UA 619 DEN to ORD",
-      "bodyPreview": "United Airlines UA 619. Departs DEN 7:30 PM MST, arrives ORD 10:20 PM CST. Confirmation K7QX2M.",
+      "subject": "UA 1127 LGA to ORD",
+      "bodyPreview": "United Airlines UA 1127. Departs LGA 7:30 PM ET, arrives ORD 9:05 PM CT. Confirmation K7QX2M.",
       "importance": "high",
       "sensitivity": "normal",
       "isAllDay": false,
@@ -284,7 +224,7 @@
       "seriesMasterId": null,
       "showAs": "busy",
       "type": "singleInstance",
-      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10g2tjvd1OFQLIRAAA=&exvsurl=1&path=/calendar/item",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10aa0jxi1U5V5IYAAA=&exvsurl=1&path=/calendar/item",
       "isOnlineMeeting": false,
       "onlineMeetingProvider": "unknown",
       "onlineMeetingUrl": null,
@@ -295,23 +235,23 @@
       },
       "body": {
         "contentType": "text",
-        "content": "United Airlines UA 619. Departs DEN 7:30 PM MST, arrives ORD 10:20 PM CST. Confirmation K7QX2M."
+        "content": "United Airlines UA 1127. Departs LGA 7:30 PM ET, arrives ORD 9:05 PM CT. Confirmation K7QX2M."
       },
       "start": {
-        "dateTime": "2026-11-05T19:30:00.0000000",
+        "dateTime": "2026-11-05T18:30:00.0000000",
         "timeZone": "Central Standard Time"
       },
       "end": {
-        "dateTime": "2026-11-05T22:20:00.0000000",
+        "dateTime": "2026-11-05T21:05:00.0000000",
         "timeZone": "Central Standard Time"
       },
       "location": {
-        "displayName": "Denver International",
+        "displayName": "LaGuardia Terminal B",
         "locationType": "default"
       },
       "locations": [
         {
-          "displayName": "Denver International"
+          "displayName": "LaGuardia Terminal B"
         }
       ],
       "recurrence": null,

@@ -2,14 +2,17 @@
   "facts": [
     {
       "type": "person",
-      "summary": "Priya is a data scientist in India, on a very different schedule.",
+      "summary": "Priya is in Bengaluru and only works 8 AM to 12 PM Eastern.",
       "name": "Priya",
-      "attributes": { "role": "data scientist", "location": "India", "timezone": "Asia/Kolkata" },
+      "attributes": { "role": "data scientist" },
+      "location": "Bengaluru",
+      "timezone": "Asia/Kolkata",
+      "working_hours": { "start": "08:00", "end": "12:00", "timezone": "America/New_York" },
       "priority": "medium",
       "flexibility": "medium",
-      "source_text": "Priya is a data scientist in India, on a completely different schedule."
+      "source_text": "Priya is in Bengaluru and only works 8 AM to 12 PM ET."
     }
   ],
   "replace_ids": [],
-  "confirmation": "Got it: Priya is in India. I'll only suggest times inside Priya's working hours and show you what time it is there."
+  "confirmation": "Got it: Priya is in Bengaluru but works 8 AM to 12 PM Eastern. I'll only offer times in that window and show you the local time in Bengaluru too."
 }

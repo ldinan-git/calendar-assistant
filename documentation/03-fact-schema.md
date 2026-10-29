@@ -40,6 +40,15 @@ Priority answers "what matters?", flexibility answers "who do I bump?".
 
 `never_reschedule: true` is stronger than `flexibility: "low"`: `analyze` rates any event with that person as flexibility `none`, and `genCandidates` never offers it as a bump. When several people are in a meeting the least flexible one wins. A person fact may also carry `attributes.location` and `attributes.timezone` (Priya: India, `Asia/Kolkata`), but working hours and the real time zone come from the directory (Graph `mailboxSettings`), not from the fact.
 
+A person fact can also say where someone is and when they actually work, which overrides what their calendar claims:
+
+```json
+{ "type": "person", "name": "Priya", "location": "Bengaluru", "timezone": "Asia/Kolkata",
+  "working_hours": { "start": "08:00", "end": "12:00", "timezone": "America/New_York" } }
+```
+
+`timezone` is where they are (used to show their local time); `working_hours.timezone` is the zone those hours are in. They can differ, as here. Both are normalised by `validate.js` ("ET" and "India" become IANA zones, "8:00" becomes "08:00"; anything that doesn't parse is dropped). `effectiveDirectory` applies them over the calendar's mailbox settings.
+
 One sentence can produce more than one fact: "Jake is a partner. Keep buffers around meetings with him." returns a `person` fact and a `buffer_rule` fact. Teaching the same person or rule again replaces the old fact.
 
 ## `buffer_rule`

@@ -1116,10 +1116,12 @@
       "showAs": "busy",
       "type": "singleInstance",
       "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE114t32p01982HW4AAA=&exvsurl=1&path=/calendar/item",
-      "isOnlineMeeting": false,
-      "onlineMeetingProvider": "unknown",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
       "onlineMeetingUrl": null,
-      "onlineMeeting": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_14t32p0%40thread.v2/0"
+      },
       "responseStatus": {
         "response": "organizer",
         "time": "2026-10-27T09:41:57Z"
@@ -1137,14 +1139,10 @@
         "timeZone": "Central Standard Time"
       },
       "location": {
-        "displayName": "Chicago office, 22A",
+        "displayName": "",
         "locationType": "default"
       },
-      "locations": [
-        {
-          "displayName": "Chicago office, 22A"
-        }
-      ],
+      "locations": [],
       "recurrence": null,
       "attendees": [
         {

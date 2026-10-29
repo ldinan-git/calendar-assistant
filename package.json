@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "gen:data": "node scripts/gen-graph-data.mjs",
+    "gen:demo": "node scripts/gen-demo-doc.mjs",
     "check:flow": "node scripts/check-mock-flow.mjs"
   },
   "dependencies": {

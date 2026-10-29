@@ -1,78 +1,84 @@
 # margin
 
-An AI calendar assistant you teach in plain English and drive from a chat box. Class project, built with Claude.
+An AI calendar assistant you set up in plain English and drive from one chat box. Class project, built with Claude.
 
-Tell it "Jake is a partner, keep buffers around meetings with him" and "Brad is a client, never reschedule", then say "schedule a meeting with Jake, Alyssa, and Brad". It checks everyone's calendar and time zone, applies what it knows, flags problems, books the meeting on the right calendar with a video link, and syncs it to all three of your calendars.
+Connect your calendars, add your teammates and their calendars, tell it how each person works ("Brad is a client, never reschedule", "Priya is in Bengaluru and only works 8 AM to 12 PM ET"), then say "schedule a meeting with Jake, Alyssa, and Brad". It checks everyone's calendar and time zone, applies what it knows, flags problems, books the meeting on the right calendar with a video link, and syncs it to all your calendars.
 
-**No real LLM calls by default.** Teaching is answered by canned files in `/responses`, everything else by small deterministic stand-ins in `src/api/mockBrain.js`. Flip to live mode when you have an API key.
+A real model is connected: **Ollama** (local, no key) by default, the Claude API optionally, or no model at all (Mock).
 
 ## Run
 
 ```bash
+ollama pull llama3.2     # once, if you don't have a model
 npm install
-npm run dev            # open http://localhost:5173
+npm run dev
 ```
 
-Tabs: **Calendar** (`/#/`) and **Summary** (`/#/summary`: walkthrough, live trace of every LLM call, rendered docs).
+Four standalone pages, no tabs:
 
-## Try this
-
-1. In the chat, open **Teach it about your team** and click **Teach it all six**. Watch the **What I know** cards fill in and the calendar re-rate.
-2. Click "Schedule a meeting with Jake, Alyssa, and Brad". Read the context it applies, hover the options to preview them, then click **Book this**.
-3. In **Calendars**, click **Sync now** to see personal and club events mirrored as private Busy blocks.
-4. Click "I need 30 minutes with Priya. What times work?" and notice the 9 to 11 AM window and her local time.
-5. **Simulate an incoming invite** (Brad lands inside your airport soft hold).
-
-## The four features
-
-| Feature | Where |
+| Page | What it is |
 |---|---|
-| Calendar import and sync | Three of your own calendars merged into one view; five teammate calendars (Outlook / Graph format) you can connect or disconnect; "N events invisible to colleagues" with a Sync now button |
-| Individual rules | Taught `buffer_rule` facts: a 60 minute soft hold before flights, 15 minute buffers around Jake |
-| Knowledge base | Profile cards per person (role, time zone, working hours, what you taught) plus your own rules |
-| Promptable actions | One chat box: teach, ask for times, book, recall ("what do you know about Jake?"), sync |
+| http://localhost:5173/ | **The finished product.** Calendars connected, team added, context taught, synced |
+| http://localhost:5173/fresh.html | **The new app.** The same code starting blank, for showing setup |
+| http://localhost:5173/demo.html | **The demo script**, five parts, with a Copy button on every prompt |
+| http://localhost:5173/summary.html | The walkthrough and every doc, rendered |
 
-The team (diagram in `documentation/09-team-structure.md`): Jake (partner, New York), Sarah (direct manager), Alyssa (peer), Priya (data scientist, Bengaluru), Brad (client, Seattle).
+The demo script takes you from the new app to the finished product. It's also in `documentation/10-demo-script.md`.
+
+## The five parts of the pitch
+
+1. **Import my calendars.** Work, personal and a club calendar merge into one view, with a checkbox per calendar and a Sync that makes personal events visible to colleagues as private Busy blocks
+2. **Add my own context.** "When you see a flight, hold an hour before and an hour after it." Soft holds appear next to every flight, and anything inside one is flagged
+3. **Add team members and their calendars.** People and calendars are separate steps. A Teammates tab shows one person's week or compares several side by side with the shared free time
+4. **Add context to the knowledge base.** One list the assistant reads. Teams are messy: Priya's calendar says 9 to 6 in India, but they work 8 AM to 12 PM Eastern. One sentence fixes what the calendar gets wrong
+5. **Schedule meetings.** One sentence, with options, callouts and local times, then booking on the right calendar with a Zoom or Teams link, mirrored to all calendars
+
+The knowledge base lives inside the assistant (open **Knowledge base** at the top of the chat), not on the home screen.
+
+## Models
+
+Pick one in the header: **Ollama (local)**, **Claude API**, or **Mock**. The app checks what Ollama has installed and lets you choose.
+
+- Everything a model returns is checked by code (`src/api/validate.js`): shape, names, numbers and times. A bad answer is retried once, repaired, or replaced by the mock for that one call, and the **LLM trace** (button in the header) says which.
+- On a CPU a 3B model is slow (seconds per answer, up to a minute for teaching five sentences) and its wording is sometimes clumsy. That's the model, not the app. A bigger Ollama model or the Claude API is better. Set `VITE_LLM_ANALYZE=1` to let a strong model rate every event too.
+- Code, not the model, owns facts: availability, working hours, time zones, buffer minutes, who is never rescheduled, names and calendars read from your sentence.
+
+Copy `.env.example` to `.env.local` for the Claude API key or to change the default.
 
 ## Layout
 
 ```
+index.html, fresh.html, demo.html, summary.html     the four pages
 src/
-  api/llm.js           callLLM(task, input): mock or live, plus the trace
-  api/mockBrain.js     deterministic stand-ins for analyze / parse / route / rank / advice
-  api/prompts.js       the six system prompts
+  entries/             one tiny entry per page
+  App.jsx              header, model picker, LLM trace
+  Workspace.jsx        the app itself; mode "fresh" or "final" is only the starting state
+  api/llm.js           callLLM(task, input): Ollama / Anthropic / mock, queue, retry, fallback, trace
+  api/validate.js      checks and repairs model output
+  api/prompts.js       the seven system prompts (written for a small model)
+  api/mockBrain.js     rule-based stand-ins, also the fallback; reads names and calendars from text
+  api/fixtures.js      canned teaching responses (mock mode, and to pre-fill the finished app)
   lib/scheduler.js     pure scheduling logic (no React, no LLM)
-  lib/graph.js         Outlook / Graph responses -> internal events
-  lib/tz.js            time zones and working hours (Intl only)
-  lib/context.js       "what do I know about these people?" in plain text
+  lib/context.js       knowledge base + effective directory (calendar settings overridden by what you taught)
+  lib/graph.js, tz.js  Outlook responses and time zones
   lib/booking.js       which calendar, which video provider, join link
   data/graph/*.json    sample Outlook calendars: you (3), Jake, Alyssa, Brad, Sarah, Priya, directory
-  data/mock.js         wires the sample data together
-  components/          calendar grid, chat, people cards, calendars panel, side panels
-  views/SummaryView.jsx
+  data/demoScript.js   the demo script (one source for the page and the markdown)
+  components/, views/
 responses/             canned teaching responses + manifest.json
-documentation/         design notes, decisions, team diagram, AI collaboration log
-summary/walkthrough.md the walkthrough shown on the Summary tab
-scripts/               gen-graph-data.mjs, check-mock-flow.mjs
+documentation/         design notes, decisions, team diagram, demo script, AI collaboration log
+scripts/               gen-graph-data.mjs, gen-demo-doc.mjs, check-mock-flow.mjs
 ```
 
 ## Checks
 
 ```bash
-npm run check:flow   # 51 assertions through the whole mock pipeline
+npm run check:flow   # 96 assertions: data, time zones, knowledge base, validators, scheduling, booking
 npm run build
 npm run gen:data     # regenerate the sample Outlook data
+npm run gen:demo     # regenerate documentation/10-demo-script.md from the script data
 ```
-
-## Live mode
-
-```bash
-cp .env.example .env.local
-# set VITE_LLM_MODE=live and VITE_ANTHROPIC_API_KEY=...
-```
-
-The key is exposed to the browser. Local demos only. Live mode has not been run yet. See `documentation/08-ai-collaboration-notes.md`.
 
 ## Docs
 
-Start at `documentation/00-index.md`.
+Start at `documentation/00-index.md`. The team diagram is `documentation/09-team-structure.md`.

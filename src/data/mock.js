@@ -51,20 +51,26 @@ export const CAL_IDS = WORLD.calendars.map((c) => c.id);
 export const EMAILS = ["luke.dinan@firmname.example (work)", "luke.dinan@outlook.example (personal)", "luke.dinan@school.example (club)"];
 
 // Demo "incoming invites", used one at a time by the Simulate button.
+// Brad's lands Monday 4:15 PM: inside the hour-before hold on your 5 PM flight and on top of your 1:1 with Sarah.
 export const INCOMING = [
-  { from: "Brad", title: "Northwind: scope check-in", attendees: ["You", "Brad"], day: 2, start: t(14), end: t(14, 30) },
+  { from: "Brad", title: "Northwind: scope check-in", attendees: ["You", "Brad"], day: 0, start: t(16, 15), end: t(16, 45) },
   { from: "Jake", title: "Quick sync on terms", attendees: ["You", "Jake"], day: 4, start: t(11, 30), end: t(12) },
 ];
 
-/** Plain-English context to teach the assistant. The chat bot and the Knowledge base use these as suggestions. */
-export const TEACH_EXAMPLES = [
+/** What to tell the assistant about the team. One sentence per line, so a whole block can be pasted at once. */
+/** Your own rules (demo script part 2). */
+export const OWN_CONTEXT = ["When you see a flight, hold an hour before and an hour after it."];
+
+/** Context about each teammate (demo script part 4). Teams are messy: Priya's calendar says 9 to 6 in India, but they work 8 to 12 Eastern. */
+export const TEAM_CONTEXT = [
   "Jake is a partner. Keep buffers around meetings with him.",
   "Alyssa is my main peer. Her meetings can be rescheduled with ease.",
   "Brad is a client. Never reschedule a meeting with him.",
   "Sarah is my direct manager.",
-  "Priya is a data scientist in India, on a completely different schedule.",
-  "When you see a flight, hold the hour before it so I can get to the airport.",
+  "Priya is in Bengaluru and only works 8 AM to 12 PM ET.",
 ];
+
+export const TEACH_EXAMPLES = [...OWN_CONTEXT, ...TEAM_CONTEXT];
 
 export const ASK_EXAMPLES = [
   "Schedule a meeting with Jake, Alyssa, and Brad",

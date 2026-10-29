@@ -60,3 +60,17 @@ These came from the AI's memory, not from a source it checked in this session.
 - Ask the AI to **list its assumptions** at the end of each feasibility answer, so the unverified table above builds itself.
 - Start the **eval set on day one**. The place this project is weakest is "does the LLM actually use the facts", and nothing in the mock layer tests that.
 - Keep **verbatim prompts and responses** in the repo as they happen, instead of reconstructing the log at the end.
+
+## Third build: a real local model (what running it for real showed)
+
+Written after running the demo script against `llama3.2` (3B, CPU only) through Ollama, which the mock could never have shown:
+
+- It returned **120 and 120 minutes** for "an hour before and an hour after". Fix: code reads the amount and sides from the sentence (`sayMinutes`).
+- Asked to import one calendar, it returned **all five teammates**. Fix: the model only picks an intent; code reads names, calendars and option numbers (`routeEntities`).
+- Its explanations cited **times that weren't in the data** ("available at 10:00 AM ET"). Fix: reasoning with an ungrounded time is replaced by the code-written line. Wrong *claims* that reuse real times are not caught; the wording of a 3B model is still sometimes wrong or clumsy.
+- It returned **one option** instead of three. Fix: code tops up from its own ranking.
+- Rating all events with it took **75 to 83 seconds**, every event failed validation, and it queued ahead of chat. Fix: rating is rules by default (D26), and chat calls jump the queue.
+- Changing `num_ctx` between requests made Ollama **reload the model and stall every request**. Found by running a benchmark next to the app. Fix: never set it.
+- Teaching: it extracted all five people correctly, including Priya's working hours in Eastern. It gave Brad priority "low" (fixed in code: never-reschedule implies high).
+
+What is still unverified: other models, the Claude API provider (never run), and anything on a GPU. Timings in the demo script are from one machine.

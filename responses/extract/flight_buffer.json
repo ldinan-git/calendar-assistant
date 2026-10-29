@@ -2,15 +2,15 @@
   "facts": [
     {
       "type": "buffer_rule",
-      "summary": "Hold the hour before every flight for getting to the airport",
-      "label": "Airport soft hold",
+      "summary": "Hold an hour before and an hour after every flight",
+      "label": "Flight soft hold",
       "trigger": { "event_type": "flight" },
       "buffer_before_min": 60,
-      "buffer_after_min": 0,
+      "buffer_after_min": 60,
       "severity": "warning",
-      "source_text": "When you see a flight, hold the hour before it so I can get to the airport."
+      "source_text": "When you see a flight, hold an hour before and an hour after it."
     }
   ],
   "replace_ids": [],
-  "confirmation": "Got it: I'll put a soft hold on the hour before every flight and flag any meeting that lands in it."
+  "confirmation": "Got it: I'll put a soft hold on the hour before and the hour after every flight, and flag any meeting that lands in one."
 }

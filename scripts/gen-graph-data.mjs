@@ -123,10 +123,10 @@ const SHARED = {
   oneAly: { day: 0, s: "14:00", e: "15:00", subject: "1:1 with Alyssa", organizer: "you", people: ["you", "alyssa"], loc: "Chicago office, 14B", key: "one-alyssa", body: "Working catch-up." },
   oneSarah: { day: 0, s: "16:00", e: "16:30", subject: "1:1 with Sarah", organizer: "sarah", people: ["sarah", "you"], online: "teams", key: "one-sarah", body: "Staffing, feedback, next week." },
   review: { day: 1, s: "14:30", e: "15:30", subject: "Partner review: Helix workplan", organizer: "sarah", people: ["sarah", "jake", "you"], online: "teams", key: "partner-review", imp: "high", body: "Jake reviewing the workplan and the draft storyline." },
-  modelReview: { day: 1, s: "11:00", e: "12:00", subject: "Model review", organizer: "alyssa", people: ["alyssa", "you"], loc: "Chicago office, 9C", key: "model-review", body: "Review the pricing model assumptions." },
+  modelReview: { day: 1, s: "11:00", e: "12:00", subject: "Model review", organizer: "alyssa", people: ["alyssa", "you"], online: "teams", key: "model-review", body: "Review the pricing model assumptions." },
   steerco: { day: 2, s: "11:00", e: "12:00", subject: "Northwind steering committee", organizer: "sarah", people: ["sarah", "jake", "brad", "you"], online: "zoom", key: "northwind-steerco", imp: "high", body: "Monthly steering committee. Client decision on phase 2." },
   debrief: { day: 2, s: "14:15", e: "14:45", subject: "Steerco debrief", organizer: "you", people: ["you", "alyssa", "sarah"], online: "teams", key: "steerco-debrief", body: "Quick internal debrief and follow-ups." },
-  helixDeep: { day: 3, s: "10:00", e: "12:00", subject: "Helix workplan deep dive", organizer: "sarah", people: ["sarah", "you"], loc: "Chicago office, 22A", key: "helix-deep", body: "Two hours on the workplan." },
+  helixDeep: { day: 3, s: "10:00", e: "12:00", subject: "Helix workplan deep dive", organizer: "sarah", people: ["sarah", "you"], online: "teams", key: "helix-deep", body: "Two hours on the workplan." },
   handoff: { day: 3, s: "09:30", e: "10:00", subject: "Data handoff with Priya", organizer: "you", people: ["you", "priya"], online: "teams", key: "handoff-thu", body: "Hand over the cleaned dataset." },
   checkin: { day: 4, s: "11:00", e: "11:30", subject: "Weekly check-in with Jake", organizer: "jake", people: ["jake", "you"], online: "teams", key: "jake-checkin", imp: "high", body: "Standing weekly check-in." },
   retro: { day: 4, s: "14:00", e: "15:00", subject: "Team retro", organizer: "sarah", people: ["sarah", "alyssa", "you"], loc: "Chicago office, 14B", key: "team-retro", body: "Retro on the Helix sprint." },
@@ -154,17 +154,17 @@ const workYou = [
 
 const personalYou = [
   Y({ day: 0, s: "12:30", e: "13:30", subject: "Lunch with Maya", loc: "Fulton Market", key: "lunch-maya", priv: true }),
-  Y({ day: 1, s: "08:00", e: "09:00", subject: "Dentist", loc: "Loop Dental", key: "dentist", priv: true }),
-  Y({ day: 2, s: "15:00", e: "17:00", subject: "UA 482 ORD to DEN", loc: "O'Hare Terminal 1", cat: ["Travel", "Flights"], key: "ua482", imp: "high", body: "United Airlines UA 482. Departs ORD 3:00 PM, arrives DEN 4:55 PM MST. Confirmation K7QX2M. Added automatically from your email." }),
-  Y({ day: 3, s: "17:15", e: "18:15", subject: "Gym", key: "gym-thu", priv: true }),
-  Y({ day: 3, s: "19:30", e: "22:20", subject: "UA 619 DEN to ORD", loc: "Denver International", cat: ["Travel", "Flights"], key: "ua619", imp: "high", body: "United Airlines UA 619. Departs DEN 7:30 PM MST, arrives ORD 10:20 PM CST. Confirmation K7QX2M." }),
+  Y({ day: 0, s: "08:00", e: "08:45", subject: "Dentist", loc: "Loop Dental", key: "dentist", priv: true }),
+  // Outbound: Mon 5:00 PM CT, ORD to LGA. Lands 7:10 PM CT. Arrives in New York for the Tue to Thu client work.
+  Y({ day: 0, s: "17:00", e: "19:10", subject: "UA 482 ORD to LGA", loc: "O'Hare Terminal 1", cat: ["Travel", "Flights"], key: "ua482", imp: "high", body: "United Airlines UA 482. Departs ORD 5:00 PM CT, arrives LGA 8:10 PM ET. Confirmation K7QX2M. Added automatically from your email." }),
+  // Return: Thu evening
+  Y({ day: 3, s: "18:30", e: "21:05", subject: "UA 1127 LGA to ORD", loc: "LaGuardia Terminal B", cat: ["Travel", "Flights"], key: "ua1127", imp: "high", body: "United Airlines UA 1127. Departs LGA 7:30 PM ET, arrives ORD 9:05 PM CT. Confirmation K7QX2M." }),
   Y({ day: 4, s: "16:00", e: "17:00", subject: "Apartment tour", loc: "River North", key: "apt-tour", priv: true }),
 ];
 
 const orgYou = [
-  Y({ day: 0, s: "17:00", e: "18:00", subject: "Club board meeting", loc: "Harper Center 3B", key: "club-board" }),
-  Y({ day: 1, s: "16:00", e: "17:00", subject: "Case competition prep", loc: "Harper Center 3B", key: "case-prep" }),
-  Y({ day: 2, s: "12:00", e: "13:00", subject: "Consulting Club speaker lunch", loc: "Harper Center 104", key: "club-lunch" }),
+  Y({ day: 1, s: "16:00", e: "17:00", subject: "Case competition prep", online: "zoom", key: "case-prep" }),
+  Y({ day: 2, s: "12:00", e: "13:00", subject: "Consulting Club speaker lunch", online: "zoom", key: "club-lunch" }),
   Y({ day: 4, s: "14:00", e: "15:00", subject: "Consulting Club recruiting panel", loc: "Harper Center Auditorium", key: "club-panel" }),
 ];
 
@@ -286,7 +286,7 @@ write(
 );
 
 /* ------------------------------ Priya (IST, data scientist in Bengaluru) ------------------------------ */
-// Her working day is a late shift, 10:30 to 22:30 IST, so she overlaps the US morning.
+// Her calendar settings say 9 AM to 6 PM IST (the default nobody changed). In reality she works 8 AM to 12 PM Eastern, which only the knowledge base knows. 9:00 AM CT is 8:30 PM IST.
 // 9:00 AM CT is 8:30 PM IST.
 const R = (o) => event("priya", TZ.IST, o);
 write(
@@ -318,7 +318,7 @@ write("directory.json", {
     { id: "u-jake", displayName: P.jake.name, mail: P.jake.address, jobTitle: "Partner", officeLocation: "New York", mailboxSettings: { timeZone: TZ.ET, workingHours: wh(TZ.ET, "08:00", "19:00") } },
     { id: "u-alyssa", displayName: P.alyssa.name, mail: P.alyssa.address, jobTitle: "Associate", officeLocation: "Chicago", mailboxSettings: { timeZone: TZ.CT, workingHours: wh(TZ.CT, "09:00", "17:30") } },
     { id: "u-sarah", displayName: P.sarah.name, mail: P.sarah.address, jobTitle: "Engagement Manager", officeLocation: "Chicago", mailboxSettings: { timeZone: TZ.CT, workingHours: wh(TZ.CT, "08:30", "17:30") } },
-    { id: "u-priya", displayName: P.priya.name, mail: P.priya.address, jobTitle: "Data Scientist", officeLocation: "Bengaluru", mailboxSettings: { timeZone: TZ.IST, workingHours: wh(TZ.IST, "10:30", "22:30") } },
+    { id: "u-priya", displayName: P.priya.name, mail: P.priya.address, jobTitle: "Data Scientist", officeLocation: "Bengaluru", mailboxSettings: { timeZone: TZ.IST, workingHours: wh(TZ.IST, "09:00", "18:00") } },
     { id: "u-brad", displayName: P.brad.name, mail: P.brad.address, jobTitle: "VP Operations, Northwind Co (client)", officeLocation: "Seattle", mailboxSettings: { timeZone: TZ.PT, workingHours: wh(TZ.PT, "09:00", "17:00") } },
   ],
 });

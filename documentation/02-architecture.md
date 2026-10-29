@@ -105,3 +105,14 @@ It re-fires whenever events, notes, or facts change (300 ms debounce, stale resu
 3. Move `callLLM` behind a server route so the API key isn't in the browser.
 4. Add schema validation on every LLM response (see decisions).
 5. Persist facts server-side per user, and ask teammates to opt in to having their calendar read.
+
+## Update (third build)
+
+The layers above still hold; what changed:
+
+- **Two apps, no tabs.** `index.html` (finished) and `fresh.html` (new) mount the same `Workspace` with `mode="final"` or `"fresh"`. `demo.html` and `summary.html` are separate pages. See D21.
+- **A teammate roster.** `roster` is who you've added; `imported.team[name]` is whether their calendar is connected. They are separate steps (D22).
+- **`effectiveDirectory`** (`lib/context.js`) replaces reading the sample directory directly: calendar settings, overridden by taught `working_hours`, `timezone` and `location` (D23). The scheduler, Compare view and bot all use it.
+- **The knowledge base** is one list in `Workspace` state, shown as a drawer inside the chat (D24). `MemoryPanel` and `KnowledgePanel` no longer exist.
+- **Model integration** (`api/llm.js`, `api/validate.js`): Ollama, Claude API or mock; priority queue, validation, one retry, per-call fallback, trace (D25 to D27).
+- **Ratings** are provisional and instant (rules), refined by a model only when one is configured to rate (D26).

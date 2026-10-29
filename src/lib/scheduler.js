@@ -291,3 +291,36 @@ export function computeLanes(list) {
   });
   return info;
 }
+
+/**
+ * Windows where everyone in `people` is free and inside their own working hours, on one day.
+ * Used by the Teammates compare view. Returns merged [{start, end}] in the user's zone.
+ */
+export function commonFree({ people, day, events, otherBusy, directory, from = 7 * 60, to = 19 * 60, step = 30 }) {
+  const out = [];
+  for (let s = from; s + step <= to; s += step) {
+    const slot = { day, start: s, end: s + step };
+    const ok = people.every(
+      (p) =>
+        withinWorkingHours(directory[p] && directory[p].hours, day, s, s + step) &&
+        !busyList(p, events, otherBusy).some((b) => overlaps(slot, b))
+    );
+    if (!ok) continue;
+    const last = out[out.length - 1];
+    if (last && last.end === s) last.end = s + step;
+    else out.push({ start: s, end: s + step });
+  }
+  return out;
+}
+
+/** Ranges inside [from, to) where this person is outside their working hours (for shading). */
+export function nonWorkingRanges(person, day, from = 7 * 60, to = 19 * 60, step = 30) {
+  const out = [];
+  for (let s = from; s + step <= to; s += step) {
+    if (withinWorkingHours(person && person.hours, day, s, s + step)) continue;
+    const last = out[out.length - 1];
+    if (last && last.end === s) last.end = s + step;
+    else out.push({ start: s, end: s + step });
+  }
+  return out;
+}

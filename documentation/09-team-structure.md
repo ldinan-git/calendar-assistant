@@ -53,5 +53,5 @@ CLIENT: NORTHWIND CO
 | Sarah | Direct manager | CT | High priority | Meetings with Sarah rate high, flexibility medium |
 | Alyssa | Peer | CT | Meetings can be rescheduled with ease | Her meetings are the ones the assistant offers to bump, and it drafts the note |
 | Brad | Client | PT | Never reschedule | `never_reschedule: true`, flexibility `none`. Never offered as a bump. Zoom link by default |
-| Priya | Data scientist | IST | Different schedule | Priya's working hours (10:30 AM to 10:30 PM IST) only overlap yours 9 to 11 AM CT. Out of office Friday. Every slot shows her local time |
+| Priya | Data scientist | IST | "Priya is in Bengaluru and only works 8 AM to 12 PM ET." | The mess in the demo: Priya's calendar settings say 9 AM to 6 PM India time, which never overlaps your day. What you taught (working hours in Eastern, location Bengaluru) overrides it, so only 9 to 11 AM Central works and every slot shows the Bengaluru time. Out of office Friday |
 | You | Associate | CT | Flight rule | 60 minute soft hold before every flight, flags any meeting inside it |

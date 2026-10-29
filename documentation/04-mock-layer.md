@@ -52,3 +52,17 @@ Teaching the same thing twice replaces the earlier fact (matched by person name 
 3. **Teaching only knows six sentences.** Anything else is saved as a plain note and nothing reads it as a rule. The live prompt handles arbitrary sentences, mock mode does not.
 4. **`analyze` is heuristic.** Event types come from titles and the Outlook `Flights` category. A flight titled "Trip to Denver" with no category would be missed. A live model might catch it, or might not.
 5. **Mock mode has never been compared against live output.** Live mode has not been run.
+
+---
+
+## Update: providers, and what the mock is now for
+
+The mock is no longer the default. `callLLM` has three providers, chosen in the app header:
+
+| Provider | Needs | Notes |
+|---|---|---|
+| **Ollama** (default) | Ollama running on `localhost:11434` with a model pulled | Requests go through a priority queue (chat before background), are validated by `src/api/validate.js`, retried once, and fall back to the mock for that call if still unusable |
+| **Claude API** | `VITE_ANTHROPIC_API_KEY` | Also rates every event (`analyze`) |
+| **Mock** | nothing | Teaching from `responses/extract/*.json`, everything else from `mockBrain.js` |
+
+The mock still matters in three ways: it is the offline provider, it is the per-call fallback, and parts of it (`routeEntities`, `mockReasoning`, the deterministic `analyze`) run even with a real model because they are facts, not judgment. Mock teaching now covers the demo sentences, including Priya's working hours; anything else is saved as a plain note.

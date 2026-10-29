@@ -1,13 +1,15 @@
-// Mock "LLM" for the tasks that take free-form input: analyze, parse, route, rank, advice.
+// Mock "LLM" for the tasks that take free-form input: analyze, parse, route, recall, rank, advice.
 //
 // A fixture file can only answer inputs you predicted. These tasks see arbitrary calendars, sentences and
 // candidate slots, so in mock mode they're answered by small deterministic functions that produce the same
 // JSON shape the live prompts ask for. They are intentionally simple and don't try to be smart: the point is
 // that the UI, the trace and the data flow behave exactly as they will with a real model.
 // `extract` (teaching) is still answered by hand-authored fixtures in /responses/extract.
+//
+// These functions are also the fallback when a real model's answer is unusable (see llm.js), and
+// routeEntities() is used even with a real model: code, not the model, reads names and calendars from text.
 
 const RANK = { none: 0, low: 1, medium: 2, high: 3 };
-const byRank = Object.keys(RANK);
 const maxOf = (a, b) => (RANK[a] >= RANK[b] ? a : b);
 const minOf = (a, b) => (RANK[a] <= RANK[b] ? a : b);
 
@@ -99,24 +101,71 @@ export function mockParse({ text, people }) {
 }
 
 /* ------------------------------ route (what does the user want?) ------------------------------ */
-export function mockRoute({ text, people, has_options }) {
-  const l = text.toLowerCase().trim();
-  const names = people.filter((p) => nameIn(l, p));
-  const optMatch = l.match(/\b(?:option|number|#)\s*(\d)\b/) || l.match(/\b(first|second|third|1st|2nd|3rd|best|top)\b/);
-  const option = optMatch ? ({ first: 1, "1st": 1, best: 1, top: 1, second: 2, "2nd": 2, third: 3, "3rd": 3 }[optMatch[1]] || Number(optMatch[1])) : null;
+const CAL_WORDS = [
+  ["cal-work", /\b(work|firm|office)\b/],
+  ["cal-personal", /\b(personal|outlook\.com|home)\b/],
+  ["cal-org", /\b(club|org|organi[sz]ation|school|consulting club)\b/],
+];
 
-  if (/what do you (know|remember)|tell me about|who is|who are|remind me|what('s| is) the context/.test(l)) return { intent: "recall", names };
-  if (/\b(sync|import|connect|mirror)\b/.test(l) && /calendar/.test(l)) return { intent: "sync", names };
+const teachLike = (l, people) => {
   const startsWithName = new RegExp(`^(${people.join("|")})\\b`, "i").test(l);
   const declarative = /(\bis\b|\bare\b|'s\b|\bnever\b|\balways\b|\bkeep\b|\bprefers?\b)/.test(l) && !/\?/.test(l);
-  if ((startsWithName && declarative) || /when you see|^i (try|prefer|like|don'?t|never|always)\b|\bnever reschedule\b/.test(l)) return { intent: "teach", names };
+  return (startsWithName && declarative) || /when you see|^i (try|prefer|like|don'?t|never|always)\b|\bnever reschedule\b/.test(l);
+};
+
+/** Names, calendars and option numbers come from the text itself, by code. A model only decides the intent. */
+export function routeEntities(text, people) {
+  const l = text.toLowerCase();
+  const names = people.filter((p) => nameIn(l, p));
+  let calendars = CAL_WORDS.filter(([, re]) => re.test(l)).map(([id]) => id);
+  if (!calendars.length && /\b(my|all)\b.*\bcalendars\b/.test(l)) calendars = CAL_WORDS.map(([id]) => id);
+  const everyone = /\b(teammates|team|everyone|everybody|all of them)\b/.test(l);
+  const optMatch = l.match(/\b(?:option|number|#)\s*(\d)\b/) || l.match(/\b(first|second|third|1st|2nd|3rd|best|top)\b/);
+  const option = optMatch ? ({ first: 1, "1st": 1, best: 1, top: 1, second: 2, "2nd": 2, third: 3, "3rd": 3 }[optMatch[1]] || Number(optMatch[1])) : null;
+  return { names, calendars, option, importNames: everyone && !names.length ? people : names };
+}
+
+export function mockRoute({ text, people, has_options }) {
+  const l = text.toLowerCase().trim();
+  const { names, calendars, option, importNames } = routeEntities(text, people);
+
+  // several lines pasted at once, all of them statements about people or rules: teaching
+  const lines = text.split(/\n+/).map((x) => x.trim().toLowerCase()).filter(Boolean);
+  if (lines.length > 1 && lines.every((x) => teachLike(x, people))) return { intent: "teach", names };
+
+  // adding people to the team list is separate from adding their calendars
+  if (/\b(add|invite)\b/.test(l) && /\b(teammates?|team members?|to my team|to the team|my team)\b/.test(l) && !/\bcalendars?\b/.test(l)) return { intent: "team", names: importNames };
+  if (/\b(import|connect|bring in|load|add)\b/.test(l) && /\b(calendars?|teammates?|team|everyone|everybody)\b/.test(l)) return { intent: "import", calendars, names: importNames };
+  if (/\b(sync|mirror)\b/.test(l)) return { intent: "sync", names };
+  if (/what do you (know|remember)|tell me about|who is|who are|remind me|what('s| is) the context|what have i told you|who should|which of (my|the)/.test(l)) return { intent: "recall", names };
+  if (teachLike(l, people)) return { intent: "teach", names };
   if (has_options && (option || /^(yes|yep|yeah|sure|perfect|confirm)\b|\b(do it|book it|book that|go ahead|looks good|sounds good|that works)\b/.test(l))) return { intent: "book", option: option || 1, names };
   if (/\b(schedule|set up|setup|find|book|need|get|arrange|plan|want|what times|when can|when are|meet|meeting|call|catch up|lunch|coffee)\b/.test(l) && (names.length || /meeting/.test(l))) return { intent: "schedule", names };
   return { intent: "chat", names };
 }
 
+/* ------------------------------ recall (ask the knowledge base) ------------------------------ */
+export function mockRecall({ knowledge_base = [], context_notes = [] }) {
+  if (!knowledge_base.length && !context_notes.length) return { answer: "I haven't been taught anything yet. Tell me who is who, or how you like your calendar handled." };
+  if (context_notes.length) return { answer: context_notes.map((n) => `${n.name}: ${n.text}.`).join("\n") };
+  return { answer: "Here is everything you've told me:\n" + knowledge_base.map((t) => `- ${t}`).join("\n") };
+}
+
 /* ------------------------------ rank ------------------------------ */
 const list = (a) => (a.length <= 1 ? a.join("") : a.slice(0, -1).join(", ") + " and " + a[a.length - 1]);
+
+/** Plain-language reasoning built only from facts code already computed. Also used to replace model text that cites numbers it wasn't given. */
+export function mockReasoning(c) {
+  const bits = [];
+  if (c.warning_count === 0 && c.moves.length === 0) bits.push("Everyone is free and inside working hours");
+  c.callout_texts.filter((t) => /^Inside your|travelling|Only \d+ min/.test(t)).forEach((t) => bits.push(t));
+  if (c.back_to_back) bits.push("it runs back-to-back with another meeting of yours");
+  c.moves.forEach((m) => bits.push(`moving ${m.title} costs little${m.why_flexible ? ` (${m.why_flexible})` : ""}`));
+  const tz = Object.entries(c.local_times || {}).map(([n, t]) => `${n} ${t}`);
+  if (tz.length) bits.push(`local time: ${list(tz)}`);
+  const first = bits[0].charAt(0).toUpperCase() + bits[0].slice(1);
+  return [first, ...bits.slice(1)].join("; ") + ".";
+}
 
 export function mockRank({ meeting, candidates, context_notes = [] }) {
   const scored = candidates
@@ -135,15 +184,7 @@ export function mockRank({ meeting, candidates, context_notes = [] }) {
 
   const others = meeting.attendees;
   const options = picked.map(({ c }, idx) => {
-    const bits = [];
-    if (c.warning_count === 0 && c.moves.length === 0) bits.push("Everyone is free and inside working hours");
-    c.callout_texts.filter((t) => /^Inside your|travelling|Only \d+ min/.test(t)).forEach((t) => bits.push(t));
-    if (c.back_to_back) bits.push("it runs back-to-back with another meeting of yours");
-    c.moves.forEach((m) => bits.push(`moving ${m.title} costs little${m.why_flexible ? ` (${m.why_flexible})` : ""}`));
-    const tz = Object.entries(c.local_times || {}).map(([n, t]) => `${n} ${t}`);
-    if (tz.length) bits.push(`local time: ${list(tz)}`);
-    const first = bits[0].charAt(0).toUpperCase() + bits[0].slice(1);
-    const reasoning = [first, ...bits.slice(1)].join("; ") + ".";
+    const reasoning = mockReasoning(c);
     const who = list(others) || "you";
     const bump = c.moves[0];
     return {
@@ -167,10 +208,10 @@ export function mockAdvice({ invite, issues = [], conflicting_meetings = [], sen
   const overlap = issues.find((i) => /^Overlaps/.test(i));
   const b2b = issues.find((i) => /^Back-to-back/.test(i));
   const flexible = conflicting_meetings.find((c) => c.rating && (c.rating.flexibility === "high" || c.rating.flexibility === "medium"));
-  if (!issues.length) return { advice: `Accept. Nothing conflicts and no rules are in play.` };
+  if (!issues.length) return { advice: "Accept. Nothing conflicts and no rules are in play." };
   const parts = [];
   if (client || never) parts.push(`${invite.from} is a client and you don't move their meetings, so accept`);
-  else parts.push(`Accept only if you can fix the issues below`);
+  else parts.push("Accept only if you can fix the issues below");
   if (overlap && flexible) parts.push(`Move ${conflicting_meetings[0].title}, which is flexible`);
   else if (overlap) parts.push(`${overlap}, so ask for a new time`);
   if (hold) parts.push(`${hold.replace("Inside your ", "It lands inside your ")}, so check you can still make the flight`);
@@ -183,6 +224,7 @@ export function mockTask(task, input) {
     case "analyze": return mockAnalyze(input);
     case "parse": return mockParse(input);
     case "route": return mockRoute(input);
+    case "recall": return mockRecall(input);
     case "rank": return mockRank(input);
     case "advice": return mockAdvice(input);
     default: throw new Error(`mockBrain: unknown task ${task}`);
