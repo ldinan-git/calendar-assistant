@@ -9,7 +9,10 @@ Honest log of where the AI helped, where it needed correcting, and what is unver
 - **Priority vs flexibility.** The AI proposed splitting these when I described Josh. It's what makes the bump scenario work.
 - **Fact schema + structured extraction** pattern, including keeping `source_text` and `replace_ids` for updates.
 - **Scoping.** Took "AI calendar tool" from weeks to days by cutting everything that wasn't the assistant logic.
-- **Building and testing.** Wrote the app, the mock layer, fixtures, and two check scripts. `check:flow` has 25 assertions and passes.
+- **Building and testing.** Wrote the app, the mock layer, fixtures, and a check script. `check:flow` now has 51 assertions and passes.
+- **Asking before building (second build).** Given the four-feature brief, the AI read the existing repo first, then asked four questions (evolve vs rewrite, mock vs live, how much calendar data, how deep time zones go) before touching code.
+- **Finding its own mock was the wrong shape.** With a realistic calendar the old fixture-per-scenario mock could not work (fixtures keyed by event id), so the free-form tasks became deterministic functions (D20).
+- **Catching its own pronoun slip.** The first teaching fixtures wrote "her" and "his" for Sarah and Priya, who the user never described that way. Found while reading the bot's output in the browser and changed to neutral wording. Jake, Alyssa and Brad use the pronouns the user used.
 
 ## Where it was wrong or needed steering
 
@@ -29,16 +32,18 @@ These came from the AI's memory, not from a source it checked in this session.
 | Time estimates (weekend / 3 to 5 days / 2 to 4 weeks) | turns 3, 12 | Estimates, not measurements |
 | Header `anthropic-dangerous-direct-browser-access` for browser calls | `llm.js` | From memory, never exercised. Verify in the API docs before using live mode |
 | Default model name `claude-sonnet-5-5` | `.env.example`, `llm.js` | Taken from the AI's product notes in this session. Verify against the current model list |
+| Graph event field names, `mailboxSettings.workingHours` shape, Windows time zone names ("Central Standard Time") | `scripts/gen-graph-data.mjs`, `src/lib/graph.js` | Written from memory of the Graph v1.0 docs, not checked against a real response. Real responses may differ (e.g. `Prefer: outlook.timezone` header, recurrence expansion, `Z` suffixes). Compare against one real `calendarView` call before trusting the adapter |
+| "Diwali week" on Priya's Friday | `priya.json` | The AI believes Diwali 2026 falls on Sunday Nov 8. It is decoration in the sample data, not a calendar fact to cite |
+| Flight times and routes (LGA to ORD, ORD to SFO, ...) | sample data | Invented. Block lengths are plausible, schedules are not real |
 
 ## What has and hasn't been run
 
 | Thing | Run? |
 |---|---|
 | `npm run build` | yes, passes |
-| `npm run check` (candidate slots for each scenario) | yes |
-| `npm run check:flow` (25 assertions, full mock pipeline via Vite's module loader) | yes, passes |
-| Every component server-rendered with realistic props | yes (one real issue found and fixed: `useSyncExternalStore` needs a server snapshot) |
-| The app clicked through in a real browser | **no**, the AI has no browser |
+| `npm run check:flow` (51 assertions, full mock pipeline via Vite's module loader) | yes, passes |
+| The app in a real browser (the Claude desktop app's preview pane) | **partly**: teach all six, ask for Jake + Alyssa + Brad, book option 1, Sync now, simulate Brad's invite, ask for Priya, no console errors. **Not clicked:** booking a bump option, the Import toggle, narrow and mobile layouts, the Summary tab after the rewrite |
+| Team diagram (`team-structure.svg`) | rendered in the browser and checked; two labels were clipped and shortened |
 | Live mode against the real API | **no** |
 | The earlier single-file artifact prototype | written but never run by the AI. This repo supersedes it |
 

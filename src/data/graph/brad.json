@@ -1,0 +1,441 @@
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users('brad.whitfield@northwindco.example')/calendarView",
+  "value": [
+    {
+      "@odata.etag": "W/\"04xvzdz\"",
+      "id": "AAMkAGE11ocy1zb0W2QULPAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "036dbkk",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Pacific Standard Time",
+      "originalEndTimeZone": "Pacific Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0081AJEM26",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Northwind weekly status",
+      "bodyPreview": "Weekly status with the Northwind steering group. Client attending.",
+      "importance": "high",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": false,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE11ajem260QXVW4IAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": "https://zoom.us/j/1595480636",
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "accepted",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Weekly status with the Northwind steering group. Client attending."
+      },
+      "start": {
+        "dateTime": "2026-11-02T09:00:00.0000000",
+        "timeZone": "Pacific Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-02T10:00:00.0000000",
+        "timeZone": "Pacific Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Jake Morrison",
+            "address": "jake.morrison@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Brad Whitfield",
+            "address": "brad.whitfield@northwindco.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"19x9swz\"",
+      "id": "AAMkAGE11kf4gn50N89J97AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0i8fspk",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Pacific Standard Time",
+      "originalEndTimeZone": "Pacific Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080LK9N9U",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Budget review (internal)",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10lk9n9u1HJ2K0UAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_0lk9n9u%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-03T10:00:00.0000000",
+        "timeZone": "Pacific Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-03T11:00:00.0000000",
+        "timeZone": "Pacific Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Brad Whitfield",
+          "address": "brad.whitfield@northwindco.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0evniet\"",
+      "id": "AAMkAGE11c9qnun0A9T7ETAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "05yzcuu",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Pacific Standard Time",
+      "originalEndTimeZone": "Pacific Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080B55NDS",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Northwind steering committee",
+      "bodyPreview": "Monthly steering committee. Client decision on phase 2.",
+      "importance": "high",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": false,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10b55nds04OM0W8AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": "https://zoom.us/j/4316758318",
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "accepted",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Monthly steering committee. Client decision on phase 2."
+      },
+      "start": {
+        "dateTime": "2026-11-04T09:00:00.0000000",
+        "timeZone": "Pacific Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-04T10:00:00.0000000",
+        "timeZone": "Pacific Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Jake Morrison",
+            "address": "jake.morrison@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Brad Whitfield",
+            "address": "brad.whitfield@northwindco.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1igrv6g\"",
+      "id": "AAMkAGE10w2lilc0442S3SAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1r1lqlf",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Pacific Standard Time",
+      "originalEndTimeZone": "Pacific Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0081TX504D",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Board prep",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE11tx504d1A70CSFAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-04T13:00:00.0000000",
+        "timeZone": "Pacific Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-04T14:00:00.0000000",
+        "timeZone": "Pacific Standard Time"
+      },
+      "location": {
+        "displayName": "Northwind HQ, Seattle",
+        "locationType": "default"
+      },
+      "locations": [
+        {
+          "displayName": "Northwind HQ, Seattle"
+        }
+      ],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Brad Whitfield",
+          "address": "brad.whitfield@northwindco.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1ccvfj4\"",
+      "id": "AAMkAGE10r6nxfa1K8W5U2AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "05an97f",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Pacific Standard Time",
+      "originalEndTimeZone": "Pacific Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0081210Z1H",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Vendor demo: logistics platform",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE11210z1h1PWC2HZAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": "https://zoom.us/j/3776302797",
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-05T11:00:00.0000000",
+        "timeZone": "Pacific Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-05T12:00:00.0000000",
+        "timeZone": "Pacific Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Brad Whitfield",
+          "address": "brad.whitfield@northwindco.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"18kifm4\"",
+      "id": "AAMkAGE10pz9vv00P09DEKAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0x4rdrj",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Pacific Standard Time",
+      "originalEndTimeZone": "Pacific Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E00805XXU2X",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Ops weekly",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE105xxu2x1AR8X2BAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_05xxu2x%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-06T09:00:00.0000000",
+        "timeZone": "Pacific Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-06T10:00:00.0000000",
+        "timeZone": "Pacific Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Brad Whitfield",
+          "address": "brad.whitfield@northwindco.example"
+        }
+      }
+    }
+  ]
+}

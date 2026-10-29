@@ -34,7 +34,7 @@ export function HeadsUpPanel({ items }) {
   return (
     <section className="mg-card">
       <h2>Heads-up</h2>
-      {items.length === 0 && <p className="mg-empty">No conflicts, back-to-backs, or buffer warnings.</p>}
+      {items.length === 0 && <p className="mg-empty">No conflicts, back-to-backs, or soft-hold warnings.</p>}
       <ul className="mg-heads">
         {items.map((h, i) => (<li key={i} className={h.kind}>{h.text}</li>))}
       </ul>
@@ -42,13 +42,13 @@ export function HeadsUpPanel({ items }) {
   );
 }
 
-export function SentPanel({ sent }) {
-  if (!sent.length) return null;
+export function ActivityPanel({ log }) {
+  if (!log.length) return null;
   return (
     <section className="mg-card">
-      <h2>Sent</h2>
+      <h2>Activity</h2>
       <ul className="mg-sent">
-        {sent.map((s) => (
+        {log.map((s) => (
           <li key={s.id}>{s.lines.map((l, i) => (<p key={i}>{l}</p>))}</li>
         ))}
       </ul>

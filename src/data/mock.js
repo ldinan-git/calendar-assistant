@@ -1,63 +1,73 @@
+// Demo data. The calendars are Outlook / Microsoft Graph style responses in ./graph (see
+// scripts/gen-graph-data.mjs); this file wires them together and holds demo-only constants.
+//
+// Week of Mon Nov 2 2026. Everything below is already converted into the user's zone (Chicago).
+
+import { loadWorld } from "../lib/graph.js";
 import { t } from "../lib/time.js";
+import meWork from "./graph/me_work.json";
+import mePersonal from "./graph/me_personal.json";
+import meOrg from "./graph/me_org.json";
+import meCalendars from "./graph/me_calendars.json";
+import directory from "./graph/directory.json";
+import jake from "./graph/jake.json";
+import alyssa from "./graph/alyssa.json";
+import brad from "./graph/brad.json";
+import sarah from "./graph/sarah.json";
+import priya from "./graph/priya.json";
 
-export const PEOPLE = ["Jake", "Josh", "Priya"];
-export const PERSON_COLORS = { Jake: "#8A4FB3", Josh: "#C9742F", Priya: "#2C8C80" };
-export const EMAILS = ["you@company.com (work)", "you@university.edu (school)", "you@gmail.com (personal)"];
+export const PEOPLE = ["Jake", "Alyssa", "Brad", "Sarah", "Priya"];
+export const PERSON_COLORS = { Jake: "#8A4FB3", Alyssa: "#C9742F", Brad: "#B7423A", Sarah: "#2C6FA3", Priya: "#2C8C80" };
 
-// The user's own calendar. Week of Mon Nov 2 2026. day: 0=Mon ... 4=Fri, times are minutes since midnight.
-export const INITIAL_EVENTS = [
-  { id: "e1", title: "Team standup", attendees: ["You", "Josh", "Priya"], day: 0, start: t(9), end: t(9, 30) },
-  { id: "e2", title: "Proposal working session", attendees: ["You", "Priya"], day: 0, start: t(9, 30), end: t(10, 30) },
-  { id: "e3", title: "1:1 with Josh", attendees: ["You", "Josh"], day: 0, start: t(14), end: t(15) },
-  { id: "e4", title: "Team standup", attendees: ["You", "Josh", "Priya"], day: 1, start: t(9), end: t(9, 30) },
-  { id: "e5", title: "Coffee catch-up with Josh", attendees: ["You", "Josh"], day: 1, start: t(14), end: t(15) },
-  { id: "e6", title: "Partner review", attendees: ["You", "Jake", "Priya"], day: 1, start: t(14, 30), end: t(15, 30) },
-  { id: "e7", title: "Team standup", attendees: ["You", "Josh", "Priya"], day: 2, start: t(9), end: t(9, 30) },
-  { id: "e8", title: "Client call: Northwind", attendees: ["You", "Priya"], day: 2, start: t(11), end: t(12) },
-  { id: "e9", title: "UA 482 to SFO", attendees: ["You"], day: 2, start: t(15), end: t(17) },
-  { id: "e10", title: "Team standup", attendees: ["You", "Josh", "Priya"], day: 3, start: t(9), end: t(9, 30) },
-  { id: "e11", title: "Proposal draft block", attendees: ["You"], day: 3, start: t(10), end: t(11) },
-  { id: "e12", title: "Design sync", attendees: ["You", "Priya", "Josh"], day: 3, start: t(13), end: t(14) },
-  { id: "e13", title: "Team standup", attendees: ["You", "Josh", "Priya"], day: 4, start: t(9), end: t(9, 30) },
-  { id: "e14", title: "Weekly check-in", attendees: ["You", "Jake"], day: 4, start: t(11), end: t(11, 30) },
-];
-
-// Teammates' calendars as free/busy only (no titles), like the Google freeBusy / Graph getSchedule APIs return.
-export const OTHER_BUSY = {
-  Jake: [
-    { day: 0, start: t(10), end: t(12) },
-    { day: 1, start: t(10), end: t(11, 30) },
-    { day: 2, start: t(9, 30), end: t(11) },
-    { day: 2, start: t(13), end: t(15) },
-    { day: 3, start: t(14), end: t(16) },
-    { day: 4, start: t(13), end: t(15) },
-  ],
-  Josh: [
-    { day: 1, start: t(11), end: t(12) },
-    { day: 2, start: t(10), end: t(11) },
-    { day: 3, start: t(15), end: t(16) },
-  ],
-  Priya: [
-    { day: 0, start: t(12), end: t(13) },
-    { day: 2, start: t(13), end: t(14) },
-    { day: 4, start: t(14), end: t(16) },
-  ],
+/** How each person relates to the user. Shown on profile cards and in the team diagram. Not facts: the user teaches those. */
+export const RELATIONSHIP = {
+  Jake: "Partner",
+  Alyssa: "Peer",
+  Brad: "Client",
+  Sarah: "Direct manager",
+  Priya: "Data scientist (India)",
 };
+
+export const CALENDAR_STYLE = {
+  "cal-work": { label: "Work", color: "#4D7AA6" },
+  "cal-personal": { label: "Personal", color: "#2E7D5B" },
+  "cal-org": { label: "Club", color: "#C9742F" },
+};
+
+export const WORLD = loadWorld({
+  me: { "cal-work": meWork, "cal-personal": mePersonal, "cal-org": meOrg },
+  calendars: meCalendars,
+  personCalendars: { Jake: jake, Alyssa: alyssa, Brad: brad, Sarah: sarah, Priya: priya },
+  directory,
+});
+
+export const INITIAL_EVENTS = WORLD.events;
+export const TEAM = WORLD.team;
+export const DIRECTORY = WORLD.dir.people;
+export const MIRRORS = WORLD.mirrors;
+export const CAL_IDS = WORLD.calendars.map((c) => c.id);
+
+/** Sender / account the user books from. */
+export const EMAILS = ["luke.dinan@firmname.example (work)", "luke.dinan@outlook.example (personal)", "luke.dinan@school.example (club)"];
 
 // Demo "incoming invites", used one at a time by the Simulate button.
 export const INCOMING = [
-  { from: "Priya", title: "Roadmap sync", attendees: ["You", "Priya"], day: 2, start: t(14), end: t(15) },
-  { from: "Jake", title: "Quick sync on terms", attendees: ["You", "Jake"], day: 3, start: t(11), end: t(11, 30) },
+  { from: "Brad", title: "Northwind: scope check-in", attendees: ["You", "Brad"], day: 2, start: t(14), end: t(14, 30) },
+  { from: "Jake", title: "Quick sync on terms", attendees: ["You", "Jake"], day: 4, start: t(11, 30), end: t(12) },
 ];
 
+/** Plain-English context to teach the assistant. The chat bot and the Knowledge base use these as suggestions. */
 export const TEACH_EXAMPLES = [
-  "Jake is a partner, anything with him is high priority",
-  "Josh is a team member who is my friend, anything with him can be rescheduled",
-  "When you see a flight, add an hour buffer warning period",
-  "I try to avoid meetings before 10am",
+  "Jake is a partner. Keep buffers around meetings with him.",
+  "Alyssa is my main peer. Her meetings can be rescheduled with ease.",
+  "Brad is a client. Never reschedule a meeting with him.",
+  "Sarah is my direct manager.",
+  "Priya is a data scientist in India, on a completely different schedule.",
+  "When you see a flight, hold the hour before it so I can get to the airport.",
 ];
 
 export const ASK_EXAMPLES = [
-  "Set up 45 minutes with Jake this week",
-  "Find 30 minutes with Priya and Josh on Thursday",
+  "Schedule a meeting with Jake, Alyssa, and Brad",
+  "I need 30 minutes with Priya. What times work?",
+  "Set up 45 minutes with Jake and Sarah this week",
 ];

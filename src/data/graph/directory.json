@@ -1,0 +1,149 @@
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users",
+  "value": [
+    {
+      "id": "u-you",
+      "displayName": "Luke Dinan",
+      "mail": "luke.dinan@firmname.example",
+      "jobTitle": "Summer Associate",
+      "officeLocation": "Chicago",
+      "mailboxSettings": {
+        "timeZone": "Central Standard Time",
+        "workingHours": {
+          "daysOfWeek": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "startTime": "09:00:00.0000000",
+          "endTime": "17:00:00.0000000",
+          "timeZone": {
+            "name": "Central Standard Time"
+          }
+        }
+      }
+    },
+    {
+      "id": "u-jake",
+      "displayName": "Jake Morrison",
+      "mail": "jake.morrison@firmname.example",
+      "jobTitle": "Partner",
+      "officeLocation": "New York",
+      "mailboxSettings": {
+        "timeZone": "Eastern Standard Time",
+        "workingHours": {
+          "daysOfWeek": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "startTime": "08:00:00.0000000",
+          "endTime": "19:00:00.0000000",
+          "timeZone": {
+            "name": "Eastern Standard Time"
+          }
+        }
+      }
+    },
+    {
+      "id": "u-alyssa",
+      "displayName": "Alyssa Chen",
+      "mail": "alyssa.chen@firmname.example",
+      "jobTitle": "Associate",
+      "officeLocation": "Chicago",
+      "mailboxSettings": {
+        "timeZone": "Central Standard Time",
+        "workingHours": {
+          "daysOfWeek": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "startTime": "09:00:00.0000000",
+          "endTime": "17:30:00.0000000",
+          "timeZone": {
+            "name": "Central Standard Time"
+          }
+        }
+      }
+    },
+    {
+      "id": "u-sarah",
+      "displayName": "Sarah Patel",
+      "mail": "sarah.patel@firmname.example",
+      "jobTitle": "Engagement Manager",
+      "officeLocation": "Chicago",
+      "mailboxSettings": {
+        "timeZone": "Central Standard Time",
+        "workingHours": {
+          "daysOfWeek": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "startTime": "08:30:00.0000000",
+          "endTime": "17:30:00.0000000",
+          "timeZone": {
+            "name": "Central Standard Time"
+          }
+        }
+      }
+    },
+    {
+      "id": "u-priya",
+      "displayName": "Priya Raman",
+      "mail": "priya.raman@firmname.example",
+      "jobTitle": "Data Scientist",
+      "officeLocation": "Bengaluru",
+      "mailboxSettings": {
+        "timeZone": "India Standard Time",
+        "workingHours": {
+          "daysOfWeek": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "startTime": "10:30:00.0000000",
+          "endTime": "22:30:00.0000000",
+          "timeZone": {
+            "name": "India Standard Time"
+          }
+        }
+      }
+    },
+    {
+      "id": "u-brad",
+      "displayName": "Brad Whitfield",
+      "mail": "brad.whitfield@northwindco.example",
+      "jobTitle": "VP Operations, Northwind Co (client)",
+      "officeLocation": "Seattle",
+      "mailboxSettings": {
+        "timeZone": "Pacific Standard Time",
+        "workingHours": {
+          "daysOfWeek": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "startTime": "09:00:00.0000000",
+          "endTime": "17:00:00.0000000",
+          "timeZone": {
+            "name": "Pacific Standard Time"
+          }
+        }
+      }
+    }
+  ]
+}

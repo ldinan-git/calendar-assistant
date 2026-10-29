@@ -1,0 +1,44 @@
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users('luke.dinan%40firmname.example')/calendars",
+  "value": [
+    {
+      "id": "cal-work",
+      "name": "Work (Firm)",
+      "color": "lightBlue",
+      "hexColor": "#4D7AA6",
+      "canEdit": true,
+      "canShare": true,
+      "isDefaultCalendar": true,
+      "owner": {
+        "name": "Luke Dinan",
+        "address": "luke.dinan@firmname.example"
+      }
+    },
+    {
+      "id": "cal-personal",
+      "name": "Personal",
+      "color": "lightGreen",
+      "hexColor": "#2E7D5B",
+      "canEdit": true,
+      "canShare": true,
+      "isDefaultCalendar": false,
+      "owner": {
+        "name": "Luke Dinan",
+        "address": "luke.dinan@outlook.example"
+      }
+    },
+    {
+      "id": "cal-org",
+      "name": "Consulting Club (School)",
+      "color": "lightOrange",
+      "hexColor": "#C9742F",
+      "canEdit": true,
+      "canShare": false,
+      "isDefaultCalendar": false,
+      "owner": {
+        "name": "Luke Dinan",
+        "address": "luke.dinan@school.example"
+      }
+    }
+  ]
+}

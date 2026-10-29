@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Demo team structure</title>
+  <desc id="d">Jake, a partner, sits above Sarah, the direct manager, who manages You. Alyssa is a peer, Priya is a remote data scientist in India, and Brad is an external client at Northwind.</desc>
+  <rect width="960" height="640" fill="#F6F8FA"/>
+
+  <!-- organization boundaries -->
+  <rect x="20" y="40" width="700" height="580" rx="14" fill="#FFFFFF" stroke="#9AA6B5" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text x="36" y="64" font-size="13" font-weight="700" fill="#5C687A">THE FIRM</text>
+  <rect x="740" y="270" width="200" height="190" rx="14" fill="#FFFFFF" stroke="#B7423A" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text x="756" y="294" font-size="13" font-weight="700" fill="#B7423A">CLIENT: NORTHWIND CO</text>
+
+  <!-- relationships (drawn first, boxes sit on top) -->
+  <g fill="none" stroke="#16202E" stroke-width="2">
+    <line x1="380" y1="150" x2="380" y2="230"/>              <!-- Jake to Sarah -->
+    <line x1="380" y1="310" x2="380" y2="390"/>              <!-- Sarah to You -->
+  </g>
+  <g fill="none" stroke="#5C687A" stroke-width="2" stroke-dasharray="3 5">
+    <line x1="240" y1="430" x2="270" y2="430"/>              <!-- Alyssa peer -->
+    <path d="M380 470 V 500"/>                               <!-- You to Priya -->
+  </g>
+  <path d="M490 110 H 840 V 336" fill="none" stroke="#8A4FB3" stroke-width="2" stroke-dasharray="9 5"/>
+  <path d="M490 430 H 740 V 400 H 750" fill="none" stroke="#B7423A" stroke-width="2"/>
+  <text x="392" y="196" font-size="12" fill="#5C687A">reports to</text>
+  <text x="392" y="356" font-size="12" fill="#5C687A">manages you</text>
+  <text x="168" y="470" font-size="12" fill="#5C687A" text-anchor="middle">peer</text>
+  <text x="392" y="492" font-size="12" fill="#5C687A">works with you, remote</text>
+  <text x="600" y="102" font-size="12" fill="#8A4FB3">engagement partner for the client</text>
+  <text x="520" y="422" font-size="12" fill="#B7423A">you run the day-to-day</text>
+
+  <!-- Jake -->
+  <g>
+    <rect x="270" y="70" width="220" height="80" rx="10" fill="#FFFFFF" stroke="#8A4FB3" stroke-width="2"/>
+    <rect x="270" y="70" width="8" height="80" rx="3" fill="#8A4FB3"/>
+    <text x="290" y="94" font-size="15" font-weight="700" fill="#16202E">Jake Morrison</text>
+    <text x="290" y="113" font-size="12" fill="#16202E">Partner · New York (ET)</text>
+    <text x="290" y="134" font-size="11.5" font-weight="600" fill="#8A4FB3">Keep 15 min buffers around him</text>
+  </g>
+  <!-- Sarah -->
+  <g>
+    <rect x="270" y="230" width="220" height="80" rx="10" fill="#FFFFFF" stroke="#2C6FA3" stroke-width="2"/>
+    <rect x="270" y="230" width="8" height="80" rx="3" fill="#2C6FA3"/>
+    <text x="290" y="254" font-size="15" font-weight="700" fill="#16202E">Sarah Patel</text>
+    <text x="290" y="273" font-size="12" fill="#16202E">Engagement Manager · Chicago (CT)</text>
+    <text x="290" y="294" font-size="11.5" font-weight="600" fill="#2C6FA3">Direct manager: high priority</text>
+  </g>
+  <!-- You -->
+  <g>
+    <rect x="270" y="390" width="220" height="80" rx="10" fill="#16202E" stroke="#16202E" stroke-width="2"/>
+    <text x="290" y="414" font-size="15" font-weight="700" fill="#FFFFFF">You (Luke Dinan)</text>
+    <text x="290" y="433" font-size="12" fill="#D8E1EC">Summer Associate · Chicago (CT)</text>
+    <text x="290" y="454" font-size="11.5" font-weight="600" fill="#F5C96A">Soft hold: 1 hr before any flight</text>
+  </g>
+  <!-- Alyssa -->
+  <g>
+    <rect x="40" y="390" width="200" height="80" rx="10" fill="#FFFFFF" stroke="#C9742F" stroke-width="2"/>
+    <rect x="40" y="390" width="8" height="80" rx="3" fill="#C9742F"/>
+    <text x="60" y="414" font-size="15" font-weight="700" fill="#16202E">Alyssa Chen</text>
+    <text x="60" y="433" font-size="12" fill="#16202E">Associate (peer) · Chicago (CT)</text>
+    <text x="60" y="454" font-size="11.5" font-weight="600" fill="#C9742F">Easy to reschedule</text>
+  </g>
+  <!-- Priya -->
+  <g>
+    <rect x="270" y="500" width="220" height="80" rx="10" fill="#FFFFFF" stroke="#2C8C80" stroke-width="2"/>
+    <rect x="270" y="500" width="8" height="80" rx="3" fill="#2C8C80"/>
+    <text x="290" y="524" font-size="15" font-weight="700" fill="#16202E">Priya Raman</text>
+    <text x="290" y="543" font-size="12" fill="#16202E">Data Scientist · Bengaluru (IST)</text>
+    <text x="290" y="564" font-size="11.5" font-weight="600" fill="#2C8C80">Overlaps you 9 to 11 AM CT only</text>
+  </g>
+  <!-- Brad -->
+  <g>
+    <rect x="750" y="336" width="180" height="80" rx="10" fill="#FFFFFF" stroke="#B7423A" stroke-width="2"/>
+    <rect x="750" y="336" width="8" height="80" rx="3" fill="#B7423A"/>
+    <text x="770" y="360" font-size="15" font-weight="700" fill="#16202E">Brad Whitfield</text>
+    <text x="770" y="379" font-size="12" fill="#16202E">VP Ops · Seattle (PT)</text>
+    <text x="770" y="400" font-size="11.5" font-weight="600" fill="#B7423A">Never reschedule</text>
+  </g>
+
+  <!-- legend -->
+  <g font-size="12" fill="#5C687A">
+    <line x1="740" y1="520" x2="780" y2="520" stroke="#16202E" stroke-width="2"/><text x="788" y="524">reporting line</text>
+    <line x1="740" y1="544" x2="780" y2="544" stroke="#5C687A" stroke-width="2" stroke-dasharray="3 5"/><text x="788" y="548">peer / remote</text>
+    <line x1="740" y1="568" x2="780" y2="568" stroke="#8A4FB3" stroke-width="2" stroke-dasharray="9 5"/><text x="788" y="572">client engagement</text>
+    <text x="740" y="602">Times shown in each person's own zone.</text>
+    <text x="740" y="618">Your day is 9 AM to 5 PM Central.</text>
+  </g>
+</svg>

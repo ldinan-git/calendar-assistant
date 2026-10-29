@@ -19,12 +19,13 @@ Facts are what the user teaches the assistant. They're produced by the `extract`
 ```json
 {
   "type": "person",
-  "summary": "Josh is a flexible friend and team member, meetings can move",
-  "name": "Josh",
-  "attributes": { "role": "team member", "relationship": "friend" },
-  "priority": "low",
-  "flexibility": "high",
-  "source_text": "Josh is a team member who is my friend, anything with him can be rescheduled"
+  "summary": "Brad is a client. Never reschedule a meeting with him.",
+  "name": "Brad",
+  "attributes": { "role": "client" },
+  "priority": "high",
+  "flexibility": "low",
+  "never_reschedule": true,
+  "source_text": "Brad is a client. Never reschedule a meeting with him."
 }
 ```
 
@@ -33,27 +34,40 @@ Facts are what the user teaches the assistant. They're produced by the `extract`
 | | flexibility low | flexibility high |
 |---|---|---|
 | **priority high** | the partner review; the client call | an important meeting you could still shift |
-| **priority low** | a fixed-time webinar you don't care about | a friend's coffee catch-up |
+| **priority low** | a fixed-time webinar you don't care about | a peer's catch-up |
 
 Priority answers "what matters?", flexibility answers "who do I bump?".
+
+`never_reschedule: true` is stronger than `flexibility: "low"`: `analyze` rates any event with that person as flexibility `none`, and `genCandidates` never offers it as a bump. When several people are in a meeting the least flexible one wins. A person fact may also carry `attributes.location` and `attributes.timezone` (Priya: India, `Asia/Kolkata`), but working hours and the real time zone come from the directory (Graph `mailboxSettings`), not from the fact.
+
+One sentence can produce more than one fact: "Jake is a partner. Keep buffers around meetings with him." returns a `person` fact and a `buffer_rule` fact. Teaching the same person or rule again replaces the old fact.
 
 ## `buffer_rule`
 
 ```json
 {
   "type": "buffer_rule",
-  "summary": "Flights get a 1-hour buffer warning on both sides",
+  "summary": "Hold the hour before every flight for getting to the airport",
+  "label": "Airport soft hold",
   "trigger": { "event_type": "flight" },
   "buffer_before_min": 60,
-  "buffer_after_min": 60,
+  "buffer_after_min": 0,
   "severity": "warning",
-  "source_text": "When you see a flight, add an hour buffer warning period"
+  "source_text": "When you see a flight, hold the hour before it so I can get to the airport."
 }
 ```
 
-- `trigger.event_type` must be from the shared vocabulary: `flight, client_meeting, internal_meeting, one_on_one, focus_block, standup, social, other`. The same vocabulary is used by `analyze` when it types events. If the two prompts drift apart, buffer rules silently stop matching.
+and the attendee form:
+
+```json
+{ "type": "buffer_rule", "label": "Partner buffer", "trigger": { "attendee": "Jake" }, "buffer_before_min": 15, "buffer_after_min": 15, "severity": "warning" }
+```
+
+- A trigger is **either** `event_type` or `attendee`. `event_type` must be from the shared vocabulary: `flight, client_meeting, internal_meeting, one_on_one, focus_block, standup, social, other`. The same vocabulary is used by `analyze` when it types events. If the two prompts drift apart, buffer rules silently stop matching.
 - `severity: "warning"` shows a flag and lets the user proceed. `"hard"` makes `genCandidates` exclude the slot.
-- Code (`computeZones`) turns this into windows. The LLM never does time arithmetic.
+- Code (`computeZones`) turns this into hatched **soft holds** on the calendar, on the side(s) of the event that have a nonzero buffer (the event itself is already on the calendar). Any other meeting that lands in one is flagged in Heads-up.
+- For an `attendee` trigger, `genCandidates` also checks the gap in that person's **own** calendar, so a new meeting with Jake is not squeezed against his practice sync.
+- The LLM never does time arithmetic.
 
 ## `preference`
 

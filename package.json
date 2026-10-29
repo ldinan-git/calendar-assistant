@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "node scripts/check-scheduler.mjs",
+    "gen:data": "node scripts/gen-graph-data.mjs",
     "check:flow": "node scripts/check-mock-flow.mjs"
   },
   "dependencies": {

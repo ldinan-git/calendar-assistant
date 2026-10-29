@@ -1,0 +1,1391 @@
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users('sarah.patel@firmname.example')/calendarView",
+  "value": [
+    {
+      "@odata.etag": "W/\"0l8bv23\"",
+      "id": "AAMkAGE11awstat0NG2SBBAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0bce1ts",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080QKHDGQ",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Team standup",
+      "bodyPreview": "Daily 30 minute sync. Blockers only.",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": "AAMkAGE11g5uoxi1HIXEMIAAA=",
+      "showAs": "busy",
+      "type": "occurrence",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10qkhdgq1LNDFFAAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_0qkhdgq%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Daily 30 minute sync. Blockers only."
+      },
+      "start": {
+        "dateTime": "2026-11-02T09:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-02T09:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Alyssa Chen",
+            "address": "alyssa.chen@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Priya Raman",
+            "address": "priya.raman@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"175njqw\"",
+      "id": "AAMkAGE11amt7lu0LS20NIAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1eg08oz",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080QUGZ5P",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Team standup",
+      "bodyPreview": "Daily 30 minute sync. Blockers only.",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": "AAMkAGE11g5uoxi1HIXEMIAAA=",
+      "showAs": "busy",
+      "type": "occurrence",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10qugz5p1NBE733AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_0qugz5p%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Daily 30 minute sync. Blockers only."
+      },
+      "start": {
+        "dateTime": "2026-11-03T09:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-03T09:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Alyssa Chen",
+            "address": "alyssa.chen@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Priya Raman",
+            "address": "priya.raman@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0oi3q35\"",
+      "id": "AAMkAGE11actlwv0OJUW39AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0oce80a",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080Q0I62S",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Team standup",
+      "bodyPreview": "Daily 30 minute sync. Blockers only.",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": "AAMkAGE11g5uoxi1HIXEMIAAA=",
+      "showAs": "busy",
+      "type": "occurrence",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10q0i62s1MR5J78AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_0q0i62s%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Daily 30 minute sync. Blockers only."
+      },
+      "start": {
+        "dateTime": "2026-11-04T09:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-04T09:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Alyssa Chen",
+            "address": "alyssa.chen@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Priya Raman",
+            "address": "priya.raman@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"00t7dty\"",
+      "id": "AAMkAGE11a2u07w0MVU4FGAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1rf8z9x",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080QAHRRR",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Team standup",
+      "bodyPreview": "Daily 30 minute sync. Blockers only.",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": "AAMkAGE11g5uoxi1HIXEMIAAA=",
+      "showAs": "busy",
+      "type": "occurrence",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10qahrrr1OF6AV1AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_0qahrrr%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Daily 30 minute sync. Blockers only."
+      },
+      "start": {
+        "dateTime": "2026-11-05T09:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-05T09:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Alyssa Chen",
+            "address": "alyssa.chen@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Priya Raman",
+            "address": "priya.raman@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0eg5unr\"",
+      "id": "AAMkAGE119sueix0L7TCRNAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0z9y11g",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080PGIYOU",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Team standup",
+      "bodyPreview": "Daily 30 minute sync. Blockers only.",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": "AAMkAGE11g5uoxi1HIXEMIAAA=",
+      "showAs": "busy",
+      "type": "occurrence",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10pgiyou1NUXMZ6AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_0pgiyou%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Daily 30 minute sync. Blockers only."
+      },
+      "start": {
+        "dateTime": "2026-11-06T09:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-06T09:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Alyssa Chen",
+            "address": "alyssa.chen@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"04xvzdz\"",
+      "id": "AAMkAGE11w21ryf1Q095F1AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "036dbkk",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0081AJEM26",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Northwind weekly status",
+      "bodyPreview": "Weekly status with the Northwind steering group. Client attending.",
+      "importance": "high",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE11ajem260QXVW4IAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": "https://zoom.us/j/1595480636",
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Weekly status with the Northwind steering group. Client attending."
+      },
+      "start": {
+        "dateTime": "2026-11-02T11:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-02T12:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Jake Morrison",
+            "address": "jake.morrison@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Brad Whitfield",
+            "address": "brad.whitfield@northwindco.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0un5459\"",
+      "id": "AAMkAGE10gg8blh09O9MLZAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0hpcrf2",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E00814AIWVC",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Staffing meeting",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE114aiwvc0BPA65SAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_14aiwvc%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-02T13:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-02T14:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1y5qi9o\"",
+      "id": "AAMkAGE115qzb5i0CCPDQIAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1lmtuv3",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080I32MC9",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "1:1 with Sarah",
+      "bodyPreview": "Staffing, feedback, next week.",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10i32mc90YN7P6BAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_0i32mc9%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Staffing, feedback, next week."
+      },
+      "start": {
+        "dateTime": "2026-11-02T16:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-02T16:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1ylql7s\"",
+      "id": "AAMkAGE10ih9eoi1HWVBRYAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0d3g79v",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0081BW0JGT",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Engagement managers sync",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE11bw0jgt1AYOEY7AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_1bw0jgt%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-03T10:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-03T11:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1m44kb9\"",
+      "id": "AAMkAGE106ipgp91DHU8DRAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0jnjcty",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E00804NHMYO",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Partner review: Helix workplan",
+      "bodyPreview": "Jake reviewing the workplan and the draft storyline.",
+      "importance": "high",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE104nhmyo0PXMWYWAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_04nhmyo%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Jake reviewing the workplan and the draft storyline."
+      },
+      "start": {
+        "dateTime": "2026-11-03T14:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-03T15:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Jake Morrison",
+            "address": "jake.morrison@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0evniet\"",
+      "id": "AAMkAGE11v8bkov0XBJU2TAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "05yzcuu",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080B55NDS",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Northwind steering committee",
+      "bodyPreview": "Monthly steering committee. Client decision on phase 2.",
+      "importance": "high",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10b55nds04OM0W8AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": "https://zoom.us/j/4316758318",
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Monthly steering committee. Client decision on phase 2."
+      },
+      "start": {
+        "dateTime": "2026-11-04T11:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-04T12:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Jake Morrison",
+            "address": "jake.morrison@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Brad Whitfield",
+            "address": "brad.whitfield@northwindco.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"15ktgmp\"",
+      "id": "AAMkAGE11oi4irf1JNGZ7DAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0dzx6sq",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080T0VHES",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Steerco debrief",
+      "bodyPreview": "Quick internal debrief and follow-ups.",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": false,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10t0vhes0JZ2VTGAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_0t0vhes%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "accepted",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Quick internal debrief and follow-ups."
+      },
+      "start": {
+        "dateTime": "2026-11-04T14:15:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-04T14:45:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Alyssa Chen",
+            "address": "alyssa.chen@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Sarah Patel",
+            "address": "sarah.patel@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1lndsu9\"",
+      "id": "AAMkAGE104wirc70VB1BNXAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0mbc656",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080LXQS9G",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Interview: associate candidate",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10lxqs9g0RD4GHWAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-04T13:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-04T14:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "Chicago office, 14A",
+        "locationType": "default"
+      },
+      "locations": [
+        {
+          "displayName": "Chicago office, 14A"
+        }
+      ],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"17qlp81\"",
+      "id": "AAMkAGE112ocxwl0L7M86FAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1vq1h62",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E00814T32P0",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Helix workplan deep dive",
+      "bodyPreview": "Two hours on the workplan.",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE114t32p01982HW4AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Two hours on the workplan."
+      },
+      "start": {
+        "dateTime": "2026-11-05T10:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-05T12:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "Chicago office, 22A",
+        "locationType": "default"
+      },
+      "locations": [
+        {
+          "displayName": "Chicago office, 22A"
+        }
+      ],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0znms90\"",
+      "id": "AAMkAGE11kf9ld60E04JTIAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0vtdzyv",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080EZ1IM9",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Team 1:1 with Alyssa",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10ez1im91TQMOSBAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_0ez1im9%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-05T14:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-05T15:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Alyssa Chen",
+            "address": "alyssa.chen@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1rzatpv\"",
+      "id": "AAMkAGE10j5cx9z1DTBLP9AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1abhbpk",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0081YL3NUQ",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Lunch with mentor",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE11yl3nuq0W71JTAAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-06T12:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-06T13:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0si54w8\"",
+      "id": "AAMkAGE105m25a804HSL60AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0wgufar",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080014TYL",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Team retro",
+      "bodyPreview": "Retro on the Helix sprint.",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10014tyl00RL74FAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Retro on the Helix sprint."
+      },
+      "start": {
+        "dateTime": "2026-11-06T14:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-06T15:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "Chicago office, 14B",
+        "locationType": "default"
+      },
+      "locations": [
+        {
+          "displayName": "Chicago office, 14B"
+        }
+      ],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Alyssa Chen",
+            "address": "alyssa.chen@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    }
+  ]
+}

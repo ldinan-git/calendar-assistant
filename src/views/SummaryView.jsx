@@ -27,7 +27,7 @@ export default function SummaryView() {
           <button className="mg-btn small ghost" onClick={clearTrace} disabled={!trace.length}>Clear</button>
         </div>
         <p className="mg-small">
-          Every call goes through <code>callLLM(task, input)</code>. In mock mode the manifest picks a file from <code>/responses</code>.
+          Every call goes through <code>callLLM(task, input)</code>. In mock mode teaching is answered by a file in <code>/responses</code> and everything else by <code>src/api/mockBrain.js</code>.
           Go to the Calendar tab, teach it something, ask for a meeting, then come back here.
         </p>
         {trace.length === 0 && <p className="mg-empty">No calls yet this session.</p>}
@@ -37,7 +37,7 @@ export default function SummaryView() {
               <details>
                 <summary>
                   <b>{t.task}</b>
-                  <span className="mg-small"> {t.at.toLocaleTimeString()}, {t.ms} ms, {t.error ? "error: " + t.error : t.file ? "answered by responses/" + t.file : "answered by the live API"}</span>
+                  <span className="mg-small"> {t.at.toLocaleTimeString()}, {t.ms} ms, {t.error ? "error: " + t.error : t.file ? "answered by " + t.file : "answered by the live API"}</span>
                 </summary>
                 <div className="mg-trace-body">
                   <div>

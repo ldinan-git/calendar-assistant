@@ -1,0 +1,25 @@
+{
+  "facts": [
+    {
+      "type": "person",
+      "summary": "Jake is a partner. His meetings are high priority.",
+      "name": "Jake",
+      "attributes": { "role": "partner" },
+      "priority": "high",
+      "flexibility": "low",
+      "source_text": "Jake is a partner. Keep buffers around meetings with him."
+    },
+    {
+      "type": "buffer_rule",
+      "summary": "Keep 15 minutes of space before and after meetings with Jake",
+      "label": "Partner buffer",
+      "trigger": { "attendee": "Jake" },
+      "buffer_before_min": 15,
+      "buffer_after_min": 15,
+      "severity": "warning",
+      "source_text": "Keep buffers around meetings with him."
+    }
+  ],
+  "replace_ids": [],
+  "confirmation": "Got it: Jake is a partner. I'll treat his meetings as high priority and keep 15 minutes of space around them, in your calendar and in his."
+}

@@ -1,0 +1,15 @@
+{
+  "facts": [
+    {
+      "type": "person",
+      "summary": "Alyssa is my main peer. Her meetings can be rescheduled with ease.",
+      "name": "Alyssa",
+      "attributes": { "role": "peer" },
+      "priority": "medium",
+      "flexibility": "high",
+      "source_text": "Alyssa is my main peer. Her meetings can be rescheduled with ease."
+    }
+  ],
+  "replace_ids": [],
+  "confirmation": "Got it: Alyssa is your main peer. If a time only works by moving a meeting with her, I'll offer that and draft the note."
+}

@@ -1,0 +1,16 @@
+{
+  "facts": [
+    {
+      "type": "person",
+      "summary": "Brad is a client. Never reschedule a meeting with him.",
+      "name": "Brad",
+      "attributes": { "role": "client" },
+      "priority": "high",
+      "flexibility": "low",
+      "never_reschedule": true,
+      "source_text": "Brad is a client. Never reschedule a meeting with him."
+    }
+  ],
+  "replace_ids": [],
+  "confirmation": "Got it: Brad is a client. His meetings are high priority and I will never suggest moving one."
+}

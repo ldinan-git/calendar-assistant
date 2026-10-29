@@ -1,0 +1,15 @@
+{
+  "facts": [
+    {
+      "type": "person",
+      "summary": "Priya is a data scientist in India, on a very different schedule.",
+      "name": "Priya",
+      "attributes": { "role": "data scientist", "location": "India", "timezone": "Asia/Kolkata" },
+      "priority": "medium",
+      "flexibility": "medium",
+      "source_text": "Priya is a data scientist in India, on a completely different schedule."
+    }
+  ],
+  "replace_ids": [],
+  "confirmation": "Got it: Priya is in India. I'll only suggest times inside Priya's working hours and show you what time it is there."
+}

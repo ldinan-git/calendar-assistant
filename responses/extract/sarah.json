@@ -1,0 +1,15 @@
+{
+  "facts": [
+    {
+      "type": "person",
+      "summary": "Sarah is my direct manager. Meetings with Sarah are high priority.",
+      "name": "Sarah",
+      "attributes": { "role": "direct manager" },
+      "priority": "high",
+      "flexibility": "medium",
+      "source_text": "Sarah is my direct manager."
+    }
+  ],
+  "replace_ids": [],
+  "confirmation": "Got it: Sarah is your direct manager. I will treat meetings with Sarah as high priority, and only suggest moving one when nothing else works."
+}

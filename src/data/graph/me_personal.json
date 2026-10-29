@@ -1,0 +1,1507 @@
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users('luke.dinan@outlook.example')/calendarView",
+  "value": [
+    {
+      "@odata.etag": "W/\"0887lhj\"",
+      "id": "AAMkAGE10cwr0l700FWF7DAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "08bbqes",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080V78ERY",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Lunch with Maya",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10v78ery1G05LDUAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-02T12:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-02T13:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "Fulton Market",
+        "locationType": "default"
+      },
+      "locations": [
+        {
+          "displayName": "Fulton Market"
+        }
+      ],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0l0hxm9\"",
+      "id": "AAMkAGE109na9wv14MEZXXAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0fl7o2y",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080HI3UUC",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Dentist",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10hi3uuc1SX8VBOAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-03T08:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-03T09:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "Loop Dental",
+        "locationType": "default"
+      },
+      "locations": [
+        {
+          "displayName": "Loop Dental"
+        }
+      ],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0iv720e\"",
+      "id": "AAMkAGE119ujpdo0RSJAX8AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1ur4aq5",
+      "categories": [
+        "Travel",
+        "Flights"
+      ],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E00814HEZFJ",
+      "reminderMinutesBeforeStart": 120,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "UA 482 ORD to DEN",
+      "bodyPreview": "United Airlines UA 482. Departs ORD 3:00 PM, arrives DEN 4:55 PM MST. Confirmation K7QX2M. Added automatically from your email.",
+      "importance": "high",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE114hezfj0O6XQ05AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "United Airlines UA 482. Departs ORD 3:00 PM, arrives DEN 4:55 PM MST. Confirmation K7QX2M. Added automatically from your email."
+      },
+      "start": {
+        "dateTime": "2026-11-04T15:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-04T17:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "O'Hare Terminal 1",
+        "locationType": "default"
+      },
+      "locations": [
+        {
+          "displayName": "O'Hare Terminal 1"
+        }
+      ],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1tyu6c3\"",
+      "id": "AAMkAGE10hd6fu90M8OHGRAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0gc4e20",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080RDLDSY",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Gym",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10rdldsy1CCWYPAAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-05T17:15:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-05T18:15:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0nn56ik\"",
+      "id": "AAMkAGE11np0nqq1X5HE9QAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1romthb",
+      "categories": [
+        "Travel",
+        "Flights"
+      ],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080G2TJVD",
+      "reminderMinutesBeforeStart": 120,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "UA 619 DEN to ORD",
+      "bodyPreview": "United Airlines UA 619. Departs DEN 7:30 PM MST, arrives ORD 10:20 PM CST. Confirmation K7QX2M.",
+      "importance": "high",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10g2tjvd1OFQLIRAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "United Airlines UA 619. Departs DEN 7:30 PM MST, arrives ORD 10:20 PM CST. Confirmation K7QX2M."
+      },
+      "start": {
+        "dateTime": "2026-11-05T19:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-05T22:20:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "Denver International",
+        "locationType": "default"
+      },
+      "locations": [
+        {
+          "displayName": "Denver International"
+        }
+      ],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0ewjtds\"",
+      "id": "AAMkAGE115sqvls089B2W8AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "07o1wu3",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0081HS2B2D",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Apartment tour",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE11hs2b2d07WJE4NAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-06T16:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-06T17:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "River North",
+        "locationType": "default"
+      },
+      "locations": [
+        {
+          "displayName": "River North"
+        }
+      ],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1lam388\"",
+      "id": "AAMkAGE11r8hcry0PH4NQAAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "01tacrn",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE10jlfv951CDND3NAAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0081TFNWV1",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE11tfnwv119WS4JJAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-02T09:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-02T09:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0jaungg\"",
+      "id": "AAMkAGE11krys720SJBM7MAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1wq1hrv",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE10jbg9k61F5G8JEAAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080BT358L",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10bt358l0GGZ4LJAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-03T09:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-03T09:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1cx8lk4\"",
+      "id": "AAMkAGE11urx2li1X6AJ3UAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0ja81kn",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE10j1gnv71DHFGVLAAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080JS64O1",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10js64o115L0G7VAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-04T09:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-04T09:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0ob67eg\"",
+      "id": "AAMkAGE10avhu1m1N4DP52AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1b4z0hv",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE10irh2681BTEP7SAAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E00813GMREL",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE113gmrel0BESJOFAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-05T09:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-05T09:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1svzinm\"",
+      "id": "AAMkAGE118fjq1g00PNK3OAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "18t6ksp",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE10kpea111ELZ093AAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0081IX0BSB",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE11ix0bsb0SF5HRDAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-06T09:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-06T09:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0in52u0\"",
+      "id": "AAMkAGE107s10r612TAR4UAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0ssr6cj",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE10uptrz11TIV45BAAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080O89JH9",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10o89jh9081E08VAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-02T09:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-02T10:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"03o7pzw\"",
+      "id": "AAMkAGE11l0vzqa0RF760EAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1qw2ifz",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE10r2r1f70BLR4R5AAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080PGW83D",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10pgw83d00FX89FAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-02T11:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-02T12:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1bihdu8\"",
+      "id": "AAMkAGE10rezbmi0ULBFLYAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1qgm6sr",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE10d9u1ou1IILSCIAAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080DT7R3P",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10dt7r3p1SRDYWNAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-02T14:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-02T15:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0eegp7j\"",
+      "id": "AAMkAGE10csjmdl01N6IG3AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1l4ut24",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE11g8ihg202AJMOUAAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0081N0YS2U",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE11n0ys2u1I24AD6AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-02T16:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-02T16:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1ye7061\"",
+      "id": "AAMkAGE1176skq718DKIPHAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1kqrp1e",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE115usjzv1FZ7PFDAAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080ULLZN0",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10ullzn00VD6OCCAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-03T09:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-03T11:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0m210om\"",
+      "id": "AAMkAGE11oqelcw0TV2XVSAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1a03vc5",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE105r02no1BM27Z8AAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080WVE0RR",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10wve0rr188N7PPAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-03T11:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-03T12:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1qh9g2s\"",
+      "id": "AAMkAGE10ilh8oq1IIFR3AAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "07q22d3",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE114te6pd17ENTPNAAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080BW4O81",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10bw4o810MS7T0BAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-03T14:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-03T15:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"03wrilm\"",
+      "id": "AAMkAGE11x4g6bs17ROQQ8AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0plsp8x",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE106q1x9f007ORLTAAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080NGFGEB",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10ngfgeb1LOX9I9AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-04T11:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-04T12:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1hxh6y1\"",
+      "id": "AAMkAGE1001d4wj18YV7G1AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "08i4g8i",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE11iz5qwf00BWX11AAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080V9WUAK",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10v9wuak15HAAWCAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-04T14:15:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-04T14:45:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0mj4rk2\"",
+      "id": "AAMkAGE11khr9fw0XKAWIKAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1sg8z3t",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE11kh3zdc058IS1KAAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080A1P6E3",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10a1p6e31R8VVBTAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-05T09:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-05T10:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1mn8fe0\"",
+      "id": "AAMkAGE11xl6c3q13KALNEAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0926nrn",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE103n7snd0QCWHB7AAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080GTG6ML",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10gtg6ml0QOMCA7AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-05T10:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-05T12:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0akn6yk\"",
+      "id": "AAMkAGE11142eey14L5ZXIAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1qyhsvz",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE11x0um331MP18R9AAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E00800E442H",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE100e442h07C6N8ZAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-06T11:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-06T11:30:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"09pm9lu\"",
+      "id": "AAMkAGE10xz9pko124ST34AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0rt1jrt",
+      "categories": [
+        "Synced"
+      ],
+      "transactionId": "AAMkAGE111cq8os1V2X0SSAAA=",
+      "originalStartTimeZone": "Central Standard Time",
+      "originalEndTimeZone": "Central Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080JXID6J",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Busy",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "private",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10jxid6j0O847ZTAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-06T14:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-06T15:00:00.0000000",
+        "timeZone": "Central Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,903 @@
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users('priya.raman@firmname.example')/calendarView",
+  "value": [
+    {
+      "@odata.etag": "W/\"0l8bv23\"",
+      "id": "AAMkAGE11ckzcmd0ZO5W4NAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0bce1ts",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "India Standard Time",
+      "originalEndTimeZone": "India Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080QKHDGQ",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Team standup",
+      "bodyPreview": "Daily 30 minute sync. Blockers only.",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": false,
+      "responseRequested": true,
+      "seriesMasterId": "AAMkAGE11g5uoxi1HIXEMIAAA=",
+      "showAs": "busy",
+      "type": "occurrence",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10qkhdgq1LNDFFAAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_0qkhdgq%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "accepted",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Daily 30 minute sync. Blockers only."
+      },
+      "start": {
+        "dateTime": "2026-11-02T20:30:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-02T21:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Alyssa Chen",
+            "address": "alyssa.chen@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Priya Raman",
+            "address": "priya.raman@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"175njqw\"",
+      "id": "AAMkAGE11cazqxe0Y054GUAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1eg08oz",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "India Standard Time",
+      "originalEndTimeZone": "India Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080QUGZ5P",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Team standup",
+      "bodyPreview": "Daily 30 minute sync. Blockers only.",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": false,
+      "responseRequested": true,
+      "seriesMasterId": "AAMkAGE11g5uoxi1HIXEMIAAA=",
+      "showAs": "busy",
+      "type": "occurrence",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10qugz5p1NBE733AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_0qugz5p%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "accepted",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Daily 30 minute sync. Blockers only."
+      },
+      "start": {
+        "dateTime": "2026-11-03T20:30:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-03T21:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Alyssa Chen",
+            "address": "alyssa.chen@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Priya Raman",
+            "address": "priya.raman@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0oi3q35\"",
+      "id": "AAMkAGE11c1058f10RVSATAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0oce80a",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "India Standard Time",
+      "originalEndTimeZone": "India Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080Q0I62S",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Team standup",
+      "bodyPreview": "Daily 30 minute sync. Blockers only.",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": false,
+      "responseRequested": true,
+      "seriesMasterId": "AAMkAGE11g5uoxi1HIXEMIAAA=",
+      "showAs": "busy",
+      "type": "occurrence",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10q0i62s1MR5J78AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_0q0i62s%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "accepted",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Daily 30 minute sync. Blockers only."
+      },
+      "start": {
+        "dateTime": "2026-11-04T20:30:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-04T21:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Alyssa Chen",
+            "address": "alyssa.chen@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Priya Raman",
+            "address": "priya.raman@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"00t7dty\"",
+      "id": "AAMkAGE11br0jjg0Z3V0N0AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1rf8z9x",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "India Standard Time",
+      "originalEndTimeZone": "India Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080QAHRRR",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Team standup",
+      "bodyPreview": "Daily 30 minute sync. Blockers only.",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": false,
+      "responseRequested": true,
+      "seriesMasterId": "AAMkAGE11g5uoxi1HIXEMIAAA=",
+      "showAs": "busy",
+      "type": "occurrence",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10qahrrr1OF6AV1AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_0qahrrr%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "accepted",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Daily 30 minute sync. Blockers only."
+      },
+      "start": {
+        "dateTime": "2026-11-05T20:30:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-05T21:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Alyssa Chen",
+            "address": "alyssa.chen@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Luke Dinan",
+            "address": "luke.dinan@firmname.example"
+          }
+        },
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Priya Raman",
+            "address": "priya.raman@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Sarah Patel",
+          "address": "sarah.patel@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"13srnsp\"",
+      "id": "AAMkAGE102mjcnl13Q0VM3AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1dkw6xu",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "India Standard Time",
+      "originalEndTimeZone": "India Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E00807TZQZ0",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Helix proposal working session",
+      "bodyPreview": "Walk through the data pack and the pricing section.",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": false,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE107tzqz019TN7BWAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_07tzqz0%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "accepted",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Walk through the data pack and the pricing section."
+      },
+      "start": {
+        "dateTime": "2026-11-02T21:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-02T22:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Priya Raman",
+            "address": "priya.raman@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0xkhozx\"",
+      "id": "AAMkAGE10e3kheb0T63OFLAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1ox95a6",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "India Standard Time",
+      "originalEndTimeZone": "India Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E00813YGKRC",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Data pipeline refactor",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE113ygkrc05DXKPSAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_13ygkrc%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-02T11:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-02T12:30:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Priya Raman",
+          "address": "priya.raman@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0nclksx\"",
+      "id": "AAMkAGE11elqcqd1AJ2MT3AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "15wd32i",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "India Standard Time",
+      "originalEndTimeZone": "India Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080IRKGLG",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "India analytics team sync",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10irkglg1VQQNG4AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_0irkglg%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-02T15:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-02T16:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Priya Raman",
+          "address": "priya.raman@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"07ji0e0\"",
+      "id": "AAMkAGE10fv51361GF2NDAAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0wh4d6r",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "India Standard Time",
+      "originalEndTimeZone": "India Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0081F51RR1",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Lunch",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "free",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE11f51rr11T7XTLRAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-03T13:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-03T14:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Priya Raman",
+          "address": "priya.raman@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"03417o6\"",
+      "id": "AAMkAGE11gcudqi0Z8E2YEAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1k2929x",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "India Standard Time",
+      "originalEndTimeZone": "India Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E00815B15FR",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Model training review",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE115b15fr0789CQ5AAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_15b15fr%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-04T16:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-04T17:30:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Priya Raman",
+          "address": "priya.raman@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"0bp3coa\"",
+      "id": "AAMkAGE11wrluk41DU1Y04AAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "0jifb9t",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "India Standard Time",
+      "originalEndTimeZone": "India Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080GHJR9F",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Data handoff with Priya",
+      "bodyPreview": "Hand over the cleaned dataset.",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": false,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10ghjr9f0JFH0TDAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": true,
+      "onlineMeetingProvider": "teamsForBusiness",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_0ghjr9f%40thread.v2/0"
+      },
+      "responseStatus": {
+        "response": "accepted",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": "Hand over the cleaned dataset."
+      },
+      "start": {
+        "dateTime": "2026-11-05T21:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-05T21:30:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [
+        {
+          "type": "required",
+          "status": {
+            "response": "accepted",
+            "time": "2026-10-26T15:02:11Z"
+          },
+          "emailAddress": {
+            "name": "Priya Raman",
+            "address": "priya.raman@firmname.example"
+          }
+        }
+      ],
+      "organizer": {
+        "emailAddress": {
+          "name": "Luke Dinan",
+          "address": "luke.dinan@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1bdv5hw\"",
+      "id": "AAMkAGE11yxm0j41FTCUVSAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "1jofaiv",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "India Standard Time",
+      "originalEndTimeZone": "India Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0080NY8ODT",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": true,
+      "hasAttachments": false,
+      "subject": "Deep work: feature engineering",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": false,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "busy",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE10ny8odt1TMSZZFAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-05T15:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-05T18:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Priya Raman",
+          "address": "priya.raman@firmname.example"
+        }
+      }
+    },
+    {
+      "@odata.etag": "W/\"1kkcfqc\"",
+      "id": "AAMkAGE10fp1x5m0UWE3WMAAA=",
+      "createdDateTime": "2026-10-22T14:11:03.4120000Z",
+      "lastModifiedDateTime": "2026-10-27T09:41:57.0030000Z",
+      "changeKey": "17ek0on",
+      "categories": [],
+      "transactionId": null,
+      "originalStartTimeZone": "India Standard Time",
+      "originalEndTimeZone": "India Standard Time",
+      "iCalUId": "040000008200E00074C5B7101A82E0081M6JNHD",
+      "reminderMinutesBeforeStart": 15,
+      "isReminderOn": false,
+      "hasAttachments": false,
+      "subject": "Out of office: Diwali week",
+      "bodyPreview": "",
+      "importance": "normal",
+      "sensitivity": "normal",
+      "isAllDay": true,
+      "isCancelled": false,
+      "isOrganizer": true,
+      "responseRequested": true,
+      "seriesMasterId": null,
+      "showAs": "oof",
+      "type": "singleInstance",
+      "webLink": "https://outlook.office365.com/owa/?itemid=AAMkAGE11m6jnhd1VAE4YJAAA=&exvsurl=1&path=/calendar/item",
+      "isOnlineMeeting": false,
+      "onlineMeetingProvider": "unknown",
+      "onlineMeetingUrl": null,
+      "onlineMeeting": null,
+      "responseStatus": {
+        "response": "organizer",
+        "time": "2026-10-27T09:41:57Z"
+      },
+      "body": {
+        "contentType": "text",
+        "content": ""
+      },
+      "start": {
+        "dateTime": "2026-11-06T00:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "end": {
+        "dateTime": "2026-11-07T00:00:00.0000000",
+        "timeZone": "India Standard Time"
+      },
+      "location": {
+        "displayName": "",
+        "locationType": "default"
+      },
+      "locations": [],
+      "recurrence": null,
+      "attendees": [],
+      "organizer": {
+        "emailAddress": {
+          "name": "Priya Raman",
+          "address": "priya.raman@firmname.example"
+        }
+      }
+    }
+  ]
+}

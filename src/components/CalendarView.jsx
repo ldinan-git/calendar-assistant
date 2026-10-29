@@ -1,12 +1,15 @@
 import { DAYS, DATES, GRID_START, GRID_END, PPM, fmt, slotLabel } from "../lib/time.js";
-import { computeLanes, busyList } from "../lib/scheduler.js";
-import { PEOPLE, PERSON_COLORS, OTHER_BUSY } from "../data/mock.js";
+import { computeLanes } from "../lib/scheduler.js";
+import { PEOPLE, PERSON_COLORS, CALENDAR_STYLE } from "../data/mock.js";
 
-export default function CalendarView({ events, analysis, flags, zones, overlay, selected, onSelect, ghost, ghostTitle }) {
+const clampTop = (s) => (Math.max(s, GRID_START) - GRID_START) * PPM;
+const clampH = (s, e) => (Math.min(e, GRID_END) - Math.max(s, GRID_START)) * PPM;
+
+export default function CalendarView({ events, analysis, flags, zones, overlay, overlayBlocks, selected, onSelect, ghost, ghostTitle }) {
   return (
     <div className="mg-cal">
       <div className="mg-cal-head">
-        <div />
+        <div className="mg-small mg-tzlabel">CT</div>
         {DAYS.map((d, i) => (
           <div key={d} className="mg-dayhead"><b>{d}</b> {DATES[i]}</div>
         ))}
@@ -18,62 +21,51 @@ export default function CalendarView({ events, analysis, flags, zones, overlay, 
           ))}
         </div>
         {DAYS.map((d, di) => {
-          const dayEvents = events.filter((e) => e.day === di && e.attendees.includes("You"));
+          const dayEvents = events.filter((e) => e.day === di && e.attendees.includes("You") && e.end > GRID_START && e.start < GRID_END);
           const lanes = computeLanes(dayEvents);
           return (
             <div className="mg-day" key={d}>
               {Array.from({ length: 10 }, (_, i) => (
                 <div key={i} className="mg-hline" style={{ top: i * 60 * PPM }} />
               ))}
-              {zones.filter((z) => z.day === di).map((z, i) => (
-                <div
-                  key={i}
-                  className="mg-zone"
-                  style={{
-                    top: (Math.max(z.start, GRID_START) - GRID_START) * PPM,
-                    height: (Math.min(z.end, GRID_END) - Math.max(z.start, GRID_START)) * PPM,
-                  }}
-                  title={`Buffer around ${z.title}`}
-                >
-                  <span>Buffer</span>
+              {zones.filter((z) => z.day === di && z.end > GRID_START && z.start < GRID_END).map((z, i) => (
+                <div key={i} className="mg-zone" style={{ top: clampTop(z.start), height: clampH(z.start, z.end) }} title={`${z.label}: ${z.title}`}>
+                  <span>{z.kind === "person" ? "Buffer" : "Soft hold"}</span>
                 </div>
               ))}
               {PEOPLE.filter((p) => overlay[p]).map((p, pi) =>
-                busyList(p, events, OTHER_BUSY)
-                  .filter((b) => b.day === di)
+                (overlayBlocks[p] || [])
+                  .filter((b) => b.day === di && b.end > GRID_START && b.start < GRID_END)
                   .map((b, bi) => (
                     <div
                       key={p + bi}
                       className="mg-strip"
-                      title={`${p} is busy`}
-                      style={{
-                        background: PERSON_COLORS[p],
-                        right: 2 + pi * 6,
-                        top: (b.start - GRID_START) * PPM,
-                        height: (b.end - b.start) * PPM,
-                      }}
+                      title={`${p}: ${b.title} (${fmt(b.start)} to ${fmt(b.end)} CT)`}
+                      style={{ background: PERSON_COLORS[p], right: 2 + pi * 6, top: clampTop(b.start), height: clampH(b.start, b.end) }}
                     />
                   ))
               )}
               {dayEvents.map((e) => {
                 const a = analysis[e.id];
                 const f = flags[e.id] || { conflict: [], b2bWith: [], zone: null };
-                const h = (e.end - e.start) * PPM;
+                const h = clampH(e.start, e.end);
                 const L = lanes[e.id] || { lane: 0, lanes: 1 };
                 const bad = f.conflict.length > 0;
                 const warn = f.b2bWith.length > 0 || f.zone;
+                const cal = CALENDAR_STYLE[e.calendar];
                 return (
                   <button
                     key={e.id}
                     className={`mg-ev p-${a ? a.priority : "none"}${e.pending ? " pending" : ""}${selected === e.id ? " sel" : ""}`}
                     style={{
-                      top: (e.start - GRID_START) * PPM,
+                      top: clampTop(e.start),
                       height: h - 1,
                       left: `${(L.lane / L.lanes) * 100}%`,
                       width: `calc(${100 / L.lanes}% - 2px)`,
+                      borderLeft: `4px solid ${cal ? cal.color : "#999"}`,
                     }}
                     onClick={() => onSelect(e.id)}
-                    title={`${e.title}\n${slotLabel(e)}${a ? "\n" + a.reason : ""}`}
+                    title={`${e.title}\n${slotLabel(e)}${cal ? "\n" + cal.label + " calendar" : ""}${a ? "\n" + a.reason : ""}`}
                   >
                     {(bad || warn) && <i className={"dot " + (bad ? "bad" : "warn")} />}
                     <span className="t">{e.title}</span>
@@ -85,14 +77,14 @@ export default function CalendarView({ events, analysis, flags, zones, overlay, 
                         {e.isNew && <em>New</em>}
                         {bad && <em>Conflict</em>}
                         {f.b2bWith.length > 0 && <em>Back-to-back</em>}
-                        {f.zone && <em>Buffer</em>}
+                        {f.zone && <em>{f.zone.kind === "person" ? "Buffer" : "Soft hold"}</em>}
                       </span>
                     )}
                   </button>
                 );
               })}
               {ghost && ghost.day === di && (
-                <div className="mg-ghost" style={{ top: (ghost.start - GRID_START) * PPM, height: (ghost.end - ghost.start) * PPM }}>
+                <div className="mg-ghost" style={{ top: clampTop(ghost.start), height: clampH(ghost.start, ghost.end) }}>
                   {ghostTitle || "New"}
                 </div>
               )}

@@ -1,12 +1,14 @@
 // One entry point for every LLM call in the app: callLLM(task, input).
 //
-//   mock (default): answer comes from a hardcoded file in /responses, picked by responses/manifest.json
-//   live:           same call goes to the Anthropic API with the prompt from prompts.js
+//   mock (default): `extract` is answered by a hand-authored file in /responses (picked by manifest.json);
+//                   analyze, parse, route, rank and advice by the small deterministic functions in mockBrain.js
+//   live:           every task goes to the Anthropic API with the prompt from prompts.js
 //
 // Every call is recorded in a trace that the /summary tab displays.
 
 import manifest from "../../responses/manifest.json";
 import { PROMPTS } from "./prompts.js";
+import { mockTask } from "./mockBrain.js";
 
 const fixtures = import.meta.glob("../../responses/**/*.json", { eager: true, import: "default" });
 
@@ -31,59 +33,22 @@ function record(entry) {
 }
 
 /* ------------------------------ mock ------------------------------ */
-// Which taught facts are present? Regexes live in manifest.tags and run over the facts as text.
-function tagsFromFacts(facts) {
-  const text = JSON.stringify(facts || []).toLowerCase();
-  return Object.entries(manifest.tags)
-    .filter(([, re]) => new RegExp(re, "i").test(text))
-    .map(([tag]) => tag);
-}
-
-function pickRule(rules, text, tags) {
-  return rules.find(
-    (r) => new RegExp(r.match, "i").test(text) && (r.requireTags || []).every((t) => tags.includes(t))
-  );
-}
-
-function resolveFile(task, input) {
-  const tags = tagsFromFacts(input.taught_facts);
-  switch (task) {
-    case "extract": {
-      const rule = pickRule(manifest.extract.rules, input.user_message, tags);
-      return rule ? rule.file : manifest.extract.fallback;
-    }
-    case "parse": {
-      const rule = pickRule(manifest.parse.rules, input.text, tags);
-      return rule ? rule.file : manifest.parse.fallback;
-    }
-    case "analyze": {
-      const key = manifest.analyze.tagsUsed.filter((t) => tags.includes(t)).join("+");
-      return manifest.analyze.files[key] || manifest.analyze.files[""];
-    }
-    case "rank": {
-      const rule = pickRule(manifest.rank.rules, input.request, tags);
-      return rule ? rule.file : manifest.rank.fallback;
-    }
-    case "advice": {
-      const text = `${input.invite.title}`;
-      const rule = pickRule(manifest.advice.rules, text, tags);
-      return rule ? rule.file : manifest.advice.fallback;
-    }
-    default:
-      return null;
-  }
-}
+const wait = (scale = 1) => new Promise((r) => setTimeout(r, DELAY * scale * (0.6 + Math.random() * 0.8)));
 
 async function callMock(task, input) {
-  const file = resolveFile(task, input);
-  if (!file) throw new Error(`mock: no fixture for task "${task}" and this input`);
-  const data = fixtures[`../../responses/${file}`];
-  if (!data) throw new Error(`mock: manifest points at ${file} but it is not in /responses`);
-  await new Promise((r) => setTimeout(r, DELAY * (0.6 + Math.random() * 0.8)));
-  let out = structuredClone(data);
-  // the generic fallback should still echo what the user actually typed
-  if (task === "extract" && file === manifest.extract.fallback) out.facts[0].source_text = input.user_message;
-  return { out, file };
+  if (task === "extract") {
+    const rule = manifest.extract.rules.find((r) => new RegExp(r.match, "i").test(input.user_message));
+    const file = rule ? rule.file : manifest.extract.fallback;
+    const data = fixtures[`../../responses/${file}`];
+    if (!data) throw new Error(`mock: manifest points at ${file} but it is not in /responses`);
+    await wait();
+    const out = structuredClone(data);
+    // the generic fallback should still echo what the user actually typed
+    if (file === manifest.extract.fallback) out.facts[0].source_text = input.user_message;
+    return { out, file: `responses/${file}` };
+  }
+  await wait(task === "analyze" ? 0.3 : 0.8);
+  return { out: mockTask(task, input), file: `src/api/mockBrain.js (${task})` };
 }
 
 /* ------------------------------ live ------------------------------ */
@@ -109,7 +74,7 @@ async function callLive(task, input) {
     },
     body: JSON.stringify({
       model: import.meta.env.VITE_ANTHROPIC_MODEL || "claude-sonnet-5-5",
-      max_tokens: 1000,
+      max_tokens: 2000,
       system: PROMPTS[task],
       messages: [{ role: "user", content: user }],
     }),

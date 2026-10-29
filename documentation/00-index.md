@@ -14,19 +14,21 @@ This folder is a working dump, not a polished write-up. The point is to show the
 | `06-decisions.md` | Short decision records (what we chose, what we rejected, why) |
 | `07-ideas-backlog.md` | Ideas the AI had that aren't built yet |
 | `08-ai-collaboration-notes.md` | Where the AI helped, where it was wrong or unverified, how to use it better next time |
+| `09-team-structure.md` | The demo cast (you, Jake, Sarah, Alyssa, Priya, Brad) as a diagram, plus how each person changes scheduling. SVG copy: `team-structure.svg` |
 
 Other places:
 - `/summary/walkthrough.md`: the walkthrough shown on the app's Summary tab
-- `/responses`: the hardcoded LLM outputs
-- `/scripts`: fixture generator and the two check scripts
+- `/responses`: the canned teaching responses (`extract`) and the manifest that routes them
+- `/src/data/graph`: the Outlook / Microsoft Graph style sample calendars, one file per person
+- `/scripts`: the Graph data generator and the end-to-end check
 
 ## How to run
 
 ```bash
 npm install
 npm run dev          # http://localhost:5173, Summary tab at /#/summary
-npm run check        # prints candidate slots for each demo scenario
-npm run check:flow   # 25 assertions through the full mock pipeline
+npm run check:flow   # 51 assertions: Graph data, time zones, teaching, scheduling, booking, sync
+npm run gen:data     # regenerate src/data/graph/*.json from scripts/gen-graph-data.mjs
 ```
 
 Live mode (optional, calls the real API from the browser, local demos only):
@@ -37,6 +39,6 @@ Live mode has not been run yet.
 
 ## Status at time of writing
 
-- Works (verified by build + `check:flow` + server-rendering every component): mock pipeline, scheduler logic, all UI components render with realistic props.
-- Not verified: actually clicking through the UI in a browser. The AI cannot do that from its sandbox. First thing to do after `npm run dev` is to click through the demo script in `summary/walkthrough.md`.
-- Not built: live mode has never been exercised; no schema validation of LLM output; no tests for the UI.
+- Works (verified by build, `check:flow`, and clicking through the main flow in a browser: teach all six, ask for Jake + Alyssa + Brad, book option 1, Sync now, simulate Brad's invite, ask for Priya): mock pipeline, scheduler logic, chat, booking, sync.
+- Not verified: the booking of a bump option and the "Import" toggle for a disconnected teammate were exercised by logic checks only, not in the browser. Narrow and mobile widths were not reviewed.
+- Not built: live mode has never been exercised; no schema validation of LLM output; no tests for the UI; nothing is written to a real Outlook calendar.
